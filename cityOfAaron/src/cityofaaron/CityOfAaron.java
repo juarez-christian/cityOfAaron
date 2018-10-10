@@ -2,7 +2,7 @@
  * The main() class file for the cityOfAaron project
  * CIT-260
  * Fall 2018
- *  Team members: Lo Ching, Kachia Vang, Christian Juarez
+ *  Team members:  Ching Lo, Kachia Vang, Christian Juarez
  */
 
 package cityofaaron;
