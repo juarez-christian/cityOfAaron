@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * CIT-260
+ * Fall 2018
+ *  Team members:  Ching Lo, Kachia Vang, Christian Juarez
  */
 package model;
 
@@ -22,12 +23,12 @@ public class Player implements Serializable
     // member methods public getters and setters for each instance variable
     public String getName()
     {
-        return this.name;
+        return name;
     }
  
     public void setName(String _name) 
     {
-        name = _name;
+        this.name = _name;
     }
             
 }
