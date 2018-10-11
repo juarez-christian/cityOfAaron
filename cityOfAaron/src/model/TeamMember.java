@@ -12,8 +12,9 @@ package model;
 public enum TeamMember 
 {
     // the members of the enumeration
-    
-    
+    VARNAME1("name", "title"),
+    VARNAME2("name", "title"),
+    VARNAME3("name", "title");
     // data members
     private String name;
     private String title;
@@ -34,8 +35,7 @@ public enum TeamMember
     public String getTitle()
     {
         return title;
-    
-    
+    }
     // public constructor 
     // purpose: initializes de values of name and title
     // parameters: the name and title of the team member
@@ -46,6 +46,5 @@ public enum TeamMember
         name = _name;
         title = _title;
     }
-
 }
     
