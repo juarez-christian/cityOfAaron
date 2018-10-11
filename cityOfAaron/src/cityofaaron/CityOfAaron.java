@@ -44,7 +44,7 @@ public class CityOfAaron {
         System.out.println("Description: " + myItem.getName());
         System.out.println("Quantity :" + myItem.getNumber());
 
-        System.out.println("Test Kachia");
+        
     }   
     
 }
