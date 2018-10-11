@@ -15,9 +15,9 @@ import java.io.Serializable;
 public enum TeamMember 
 {
     // the members of the enumeration
-    MEMBER1("Nephi", "prophet"),
-    MEMBER2("Benjamin", "King"),
-    MEMBER3("Helaman", "Fighter");
+    member1("Nephi", "prophet"),
+    member2("Benjamin", "King"),
+    member3("Helaman", "Fighter");
     
     // data members
     private String name; 
@@ -30,8 +30,8 @@ public enum TeamMember
     
     TeamMember(String _name, String _title)
     {
-        name = _name;
-        title = _title;
+        this.name = _name;
+        this.title = _title;
     }
     
     // The getName() method
