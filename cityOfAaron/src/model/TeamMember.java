@@ -15,9 +15,9 @@ public enum TeamMember
     VARNAME1("name", "title"),
     VARNAME2("name", "title"),
     VARNAME3("name", "title");
+    
     // data members
-    private String name;
-    private String title;
+    private String name, title;
        
     // The getName() method
     // Purpose: returns the value stored in name
