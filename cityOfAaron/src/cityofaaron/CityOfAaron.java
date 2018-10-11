@@ -17,7 +17,7 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    // TODO code application logic here
         
         // player object creation
         Player myPlayer = new Player();
@@ -33,6 +33,16 @@ public class CityOfAaron {
         // team member object
         System.out.println("The team member name is: " + TeamMember.member1.getName());
         System.out.println("The title is: "+ TeamMember.member1.getTitle());
+        
+        
+        // list item class instantiated
+        ListItem myItem = new ListItem();
+        
+        myItem.setName("rake");
+        myItem.setNumber(97);
+        
+        System.out.println("Description: " + myItem.getName());
+        System.out.println("Quantity :" + myItem.getNumber());
 
     }   
     
