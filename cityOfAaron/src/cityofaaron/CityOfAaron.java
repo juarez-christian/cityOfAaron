@@ -6,7 +6,7 @@
  */
 
 package cityofaaron;
-
+import model.*;
 /**
  *
  * @author _Chris_
@@ -18,6 +18,22 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
+        
+        // player object creation
+        Player myPlayer = new Player();
+        
+        myPlayer.setName("Chris");
+        
+        // game object creation
+        Game myGame = new Game();
+        myGame.setthePlayer(myPlayer);
+        
+        System.out.println("The player's name is: " + myGame.getthePlayer().getName() +"");
+        
+        // team member object
+        System.out.println("The team member name is: " + TeamMember.member1.getName());
+        System.out.println("The title is: "+ TeamMember.member1.getTitle());
+
+    }   
     
 }
