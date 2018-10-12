@@ -69,7 +69,7 @@ public class CityOfAaron {
         + " bushels of wheat, and brought forth " + myCropData.getWheatForFood() 
         + " pounds of wheat for food. For next year's harvest, we will plan to plant on " + myCropData.getAcresPlanned() 
         + " acres of land.");
-        
+       
     }
         
 }   
