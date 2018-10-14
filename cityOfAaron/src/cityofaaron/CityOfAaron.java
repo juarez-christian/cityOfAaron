@@ -34,6 +34,16 @@ public class CityOfAaron {
         System.out.println("The team member name is: " + TeamMember.member1.getName());
         System.out.println("The title is: "+ TeamMember.member1.getTitle());
         
+        // list item class instantiated by Juarez
+
+        // Location class instantiated
+        Location myLocation = new Location();
+        
+        myLocation.setDescription("My Place");
+        myLocation.setSymbol("∆");
+        
+        System.out.println("myLocation description: " + myLocation.getDescription());
+        System.out.println("myLocation symbol = " + myLocation.getSymbol());
         
         // list item class instantiated by Juarez
         ListItem myItem = new ListItem();
