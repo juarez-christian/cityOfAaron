@@ -1,6 +1,6 @@
 /*
 * The location class file for the cityOfAaron project
- * CIT-260 08
+ * CIT-260 
  * Fall 2018
  *  Team members:  Ching Lo, Kachia Vang, Christian Juarez
  */
