@@ -12,7 +12,8 @@ package model;
  */
 import java.io.Serializable;
 
-public enum TeamMember 
+// implememnts the serializable interface
+public enum TeamMember implements Serializable 
 {
     // the members of the enumeration
     member1("Nephi", "prophet"),
