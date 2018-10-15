@@ -69,15 +69,15 @@ public class CityOfAaron {
         myCropData.setAcresPlanted(500);
         //testing the class
         System.out.println("The City of Aaron was founded in " + myCropData.getYear()
-        + ". Our population was " + myCropData.getPopulation() 
-	+ ". At that time, we owned " + myCropData.getAcresOwned() 
+        + ".\nOur population was " + myCropData.getPopulation() 
+	+ ".\nAt that time, we owned " + myCropData.getAcresOwned() 
 	+ " acres of land. Crop yield was " + myCropData.getCropYield() 
 	+ " and the total number of bushels of wheat in store was " + myCropData.getWheatInStore() 
-	+ ". We lost " + myCropData.getNumberWhoDied() 
+	+ ".\nWe lost " + myCropData.getNumberWhoDied() 
         + " dear friends, and we welcomed " + myCropData.getNewPeople() 
-	+ " new people. We were blessed with an abundance of harvest, which amounted to " + myCropData.getHarvest() 
+	+ " new people.\nWe were blessed with an abundance of harvest, which amounted to " + myCropData.getHarvest() 
         + " bushels of wheat, and brought forth " + myCropData.getWheatForFood() 
-        + " pounds of wheat for food. For next year's harvest, we will plan to plant on " + myCropData.getAcresPlanned() 
+        + " pounds of wheat for food.\nFor next year's harvest, we will plan to plant on " + myCropData.getAcresPlanned() 
         + " acres of land.");
        
     }
