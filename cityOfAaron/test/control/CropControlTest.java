@@ -186,4 +186,79 @@ public class CropControlTest {
         assertEquals(expResult, result);
         
     }
+
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOfferingTestCase1() {
+        System.out.println("setOffering - Test Case 1");
+        CropData cropData = new CropData();
+        int payOffering = 10;
+        int expResult = 10;
+        int result = CropControl.setOffering(payOffering, cropData);
+        assertEquals(expResult, result);
+     
+    }
+    
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOfferingTestCase2() {
+        System.out.println("setOffering - Test Case 2");
+        CropData cropData = new CropData();
+        int payOffering = -10;
+        int expResult = -1;
+        int result = CropControl.setOffering(payOffering, cropData);
+        assertEquals(expResult, result);
+     
+    }
+    
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOfferingTestCase3() {
+        System.out.println("setOffering - Test Case 3");
+        CropData cropData = new CropData();
+        int payOffering = 110;
+        int expResult = -1;
+        int result = CropControl.setOffering(payOffering, cropData);
+        assertEquals(expResult, result);
+     
+    }
+    
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOfferingTestCase4() {
+        System.out.println("setOffering - Test Case 4");
+        CropData cropData = new CropData();
+        int payOffering = 0;
+        int expResult = 0;
+        int result = CropControl.setOffering(payOffering, cropData);
+        assertEquals(expResult, result);
+     
+    }
+    
+    
+    /**
+     * Test of setOffering method, of class CropControl.
+     */
+    @Test
+    public void testSetOfferingTestCase5() {
+        System.out.println("setOffering - Test Case 5");
+        CropData cropData = new CropData();
+        int payOffering = 100;
+        int expResult = 100;
+        int result = CropControl.setOffering(payOffering, cropData);
+        assertEquals(expResult, result);
+     
+    }
 }

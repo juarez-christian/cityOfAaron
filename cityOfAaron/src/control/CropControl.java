@@ -41,6 +41,8 @@ public class CropControl {
     }
   
  */
+    
+    
 
 // The buyLand method
 // Purpose: To buy land
@@ -49,6 +51,8 @@ public class CropControl {
 // Returns: the total acres owned after the purchase
 // Pre-conditions: acres to buy must be positive
 //     	and <= the number of wheat owned
+    
+    // method signature
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
     {
     // if acresToBuy < 0, return -1
@@ -67,7 +71,6 @@ public class CropControl {
         cropData.setWheatInStore(stored);
     // return acresOwned
         return owned;
-    
     }
 
   
@@ -83,6 +86,8 @@ public class CropControl {
     //     a reference to a CropData object 
     // Pre-conditions: acresToSell >= 0 and acresToSell <= acresOwned
     // Returns: the number of acres owned after the sale
+    
+    // method signature
     public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     {
           //if acresToSell < 0, return -1
@@ -109,6 +114,30 @@ public class CropControl {
 
 
 
+    
+    // The setOffering method
+// Purpose: To allocate the offering
+// Parameters: a reference to a payOffering object
+//     	and a reference to a CropData object
+// Returns: the percentage of offering
+// The percentage of the harvest the player wants to set as an
+// offering must be grater or equal to 0%
+// The percentage of the harvest the player wants to set as an 
+//    offering must be lower or equal to 100%
+
+    // method signature
+    public static int setOffering(int payOffering, CropData cropData)
+    {
+    // if payoffering < 0, return -1
+        if (payOffering < 0)
+        return -1;
+    // if payoffering > 100 return -1
+    if (payOffering > 100)
+        return -1;
+    // return the percentage of offering
+    return payOffering;
+    }
+    
 
     
 }
