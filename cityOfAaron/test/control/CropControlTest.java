@@ -195,9 +195,9 @@ public class CropControlTest {
     public void testSetOfferingTestCase1() {
         System.out.println("setOffering - Test Case 1");
         CropData cropData = new CropData();
-        int payOffering = 10;
+        int percentageOffering = 10;
         int expResult = 10;
-        int result = CropControl.setOffering(payOffering, cropData);
+        int result = CropControl.setOffering(percentageOffering, cropData);
         assertEquals(expResult, result);
      
     }
@@ -210,9 +210,9 @@ public class CropControlTest {
     public void testSetOfferingTestCase2() {
         System.out.println("setOffering - Test Case 2");
         CropData cropData = new CropData();
-        int payOffering = -10;
+        int percentageOffering = -10;
         int expResult = -1;
-        int result = CropControl.setOffering(payOffering, cropData);
+        int result = CropControl.setOffering(percentageOffering, cropData);
         assertEquals(expResult, result);
      
     }
@@ -225,9 +225,9 @@ public class CropControlTest {
     public void testSetOfferingTestCase3() {
         System.out.println("setOffering - Test Case 3");
         CropData cropData = new CropData();
-        int payOffering = 110;
+        int percentageOffering = 110;
         int expResult = -1;
-        int result = CropControl.setOffering(payOffering, cropData);
+        int result = CropControl.setOffering(percentageOffering, cropData);
         assertEquals(expResult, result);
      
     }
@@ -240,9 +240,9 @@ public class CropControlTest {
     public void testSetOfferingTestCase4() {
         System.out.println("setOffering - Test Case 4");
         CropData cropData = new CropData();
-        int payOffering = 0;
+        int percentageOffering = 0;
         int expResult = 0;
-        int result = CropControl.setOffering(payOffering, cropData);
+        int result = CropControl.setOffering(percentageOffering, cropData);
         assertEquals(expResult, result);
      
     }
@@ -255,9 +255,9 @@ public class CropControlTest {
     public void testSetOfferingTestCase5() {
         System.out.println("setOffering - Test Case 5");
         CropData cropData = new CropData();
-        int payOffering = 100;
+        int percentageOffering = 100;
         int expResult = 100;
-        int result = CropControl.setOffering(payOffering, cropData);
+        int result = CropControl.setOffering(percentageOffering, cropData);
         assertEquals(expResult, result);
      
     }
