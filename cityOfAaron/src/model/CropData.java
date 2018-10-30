@@ -24,7 +24,8 @@ public class CropData implements Serializable
     private int newPeople;
     private int harvest;
     private int wheatForFood;
-    private int acresPlanted;    
+    private int acresPlanted; 
+    private int setOffering;
     
     // contains a public, empty constructor 
     public CropData() {};
@@ -107,5 +108,13 @@ public class CropData implements Serializable
     }
     public void setAcresPlanted (int _acresPlanted) {
         this.acresPlanted = _acresPlanted;
+    }
+    
+    //public getter and setter for SET OFFERING instance variable
+    public int getSetOffering() {
+        return this.setOffering;
+    }
+    public void setSetOffering (int _setOffering) {
+        this.setOffering = _setOffering;
     }
 }

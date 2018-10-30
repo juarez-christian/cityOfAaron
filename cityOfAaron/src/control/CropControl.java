@@ -119,6 +119,8 @@ public class CropControl {
         if (percentageOffering > 100) {
             return -1;
         }
+        // updates SetOffering variable
+        cropData.setSetOffering(percentageOffering);
         // return the percentage of offering
         return percentageOffering;
     }
