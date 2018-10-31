@@ -131,7 +131,7 @@ do
  // ===================================     
  public void startSavedGame()
  {
-     System.out.println("\nStart new game option selected.");
+     System.out.println("\nStart saved game option selected.");
  }
 
  
@@ -143,7 +143,7 @@ do
  // ===================================     
  public void displayHelpMenuView()
  {
-     System.out.println("\nStart new game option selected.");
+     System.out.println("\nStart display help menu view option selected.");
  }
 
  
@@ -155,7 +155,7 @@ do
  // ===================================     
  public void displaySaveGameView()
  {
-     System.out.println("\nStart new game option selected.");
+     System.out.println("\nStart save game view option selected.");
  }
 
   
