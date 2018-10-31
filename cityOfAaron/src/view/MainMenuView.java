@@ -8,9 +8,11 @@
  */
 
 package view;
+import cityofaaron.*;
+import control.*;
+import model.*;
 
 import java.util.Scanner;
-import cityofaaron.CityOfAaron;
 /**
  *
  * @author _Chris_
@@ -123,7 +125,7 @@ do
 
  
   // The startSavedGame method
- // Purpose: creates game object and starts the game
+ // Purpose: loads and starts a saved game 
  // Parameters: none
  // Returns: none
  // ===================================     
@@ -134,8 +136,8 @@ do
 
  
  
-  // The startNewGame method
- // Purpose: creates game object and starts the game
+  // The displayHelpMenuView method
+ // Purpose: displays the help menu of the game
  // Parameters: none
  // Returns: none
  // ===================================     
@@ -146,8 +148,8 @@ do
 
  
  
-  // The startNewGame method
- // Purpose: creates game object and starts the game
+  // The displaySavedGameView method
+ // Purpose: displays the games saved
  // Parameters: none
  // Returns: none
  // ===================================     
