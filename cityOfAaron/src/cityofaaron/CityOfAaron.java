@@ -7,6 +7,7 @@
 
 package cityofaaron;
 import model.*;
+import view.*;
 /**
  *
  * @author _Juarez_Lo_Vang
@@ -18,7 +19,13 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
     // TODO code application logic here
-        
+    
+        // main function - entry point for the program
+        // runs the main menu
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();       
+
+    
         // player object creation
         Player myPlayer = new Player();
         

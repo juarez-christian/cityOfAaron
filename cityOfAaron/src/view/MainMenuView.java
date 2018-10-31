@@ -75,8 +75,24 @@ do
     // ===================================       
     public int getMenuOption()
     {
-          . . .
-        
+           // declare a variable to hold user’s input
+            int userInput = 0;
+            final int MAX = 5;
+            Scanner keyboard = new Scanner(System.in);
+
+           // begin loop
+             do
+             {
+           // get user input from the keyboard
+            userInput = keyboard.nextInt();
+           // if it is not a valid value, output an error message
+             if(userInput < 1 || userInput > MAX)
+             System.out.println("Error: you must select 1, 2, 3, 4, or 5");
+           // loop back to the top of the loop if input was not valid
+           // end loop
+             } while (userInput < 1 || userInput > MAX);
+        return userInput;
+
     }
 
 
