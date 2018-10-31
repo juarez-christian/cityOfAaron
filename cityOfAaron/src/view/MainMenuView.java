@@ -148,12 +148,12 @@ do
 
  
  
-  // The displaySavedGameView method
- // Purpose: displays the games saved
+  // The displaySaveGameView method
+ // Purpose: 
  // Parameters: none
  // Returns: none
  // ===================================     
- public void displaySavedGameView()
+ public void displaySaveGameView()
  {
      System.out.println("\nStart new game option selected.");
  }
