@@ -139,13 +139,17 @@ do
   //   System.out.println("\nStart new game option selected."); // the stub
      
     // Display the Banner Page.
-    System.out.println("\nWelcome to the city of Aaron...");
+    System.out.println("\nWelcome to the city of Aaron You have been elected to assume your role as the ruler of the city. "
+            + "\nYou have the task to purchase and sell land, making sure you have enough wheat to feed your people. "
+            + "\nAny miscalculation in doing so will result in the death of your people. "
+            + "\nYou want to make sure you do a good job or else you will lose your role as ruler.");
     // Prompt for and get the user’s name.
     String name;
     System.out.println("\nPlease type in your first name: ");
     name = keyboard.next();
     // Call the createNewGame() method in the GameControl class
-    GameControl.createNewGame();
+    GameControl.createNewGame(name);
+            
     // Display a welcome message
     System.out.println("Welcome " + name + " have fun!!!");
     // Display the Game menu
