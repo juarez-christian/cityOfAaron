@@ -17,11 +17,22 @@ public class CityOfAaron {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-    // TODO code application logic here
+    // variable for keeping a reference to the Game object
+    private static Game theGame = null;
+
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
+    }
     
-        // main function - entry point for the program
-        // runs the main menu
+
+    // main function - entry point for the program
+    // runs the main menu
+    public static void main(String[] args) {
+    // TODO code application logic here    
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenuView();       
 
@@ -88,6 +99,8 @@ public class CityOfAaron {
         + " acres of land.");
        
     }
+
+   
         
 }   
     
