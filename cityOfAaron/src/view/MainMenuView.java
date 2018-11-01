@@ -99,7 +99,7 @@ do
 
 
     
- // The doAction method
+    // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
@@ -129,30 +129,43 @@ do
     
     
     
-     // The startNewGame method
+ // The startNewGame method
  // Purpose: creates game object and starts the game
  // Parameters: none
  // Returns: none
  // ===================================     
  public void startNewGame()
  {
-     System.out.println("\nStart new game option selected.");
+  //   System.out.println("\nStart new game option selected."); // the stub
+     
+    // Display the Banner Page.
+    System.out.println("\nWelcome to the city of Aaron...");
+    // Prompt for and get the user’s name.
+    String name;
+    System.out.println("\nPlease type in your first name: ");
+    name = keyboard.next();
+    // Call the createNewGame() method in the GameControl class
+    GameControl.createNewGame();
+    // Display a welcome message
+    System.out.println("Welcome " + name + " have fun!!!");
+    // Display the Game menu
+
  }
 
  
-  // The startSavedGame method
+ // The startSavedGame method
  // Purpose: loads and starts a saved game 
  // Parameters: none
  // Returns: none
  // ===================================     
  public void startSavedGame()
  {
-     System.out.println("\nStart saved game option selected.");
+     System.out.println("\nStart saved game option selected."); // the stub
  }
 
  
- 
-  // The displayHelpMenuView method
+
+ // The displayHelpMenuView method
  // Purpose: displays the help menu of the game
  // Parameters: none
  // Returns: none
@@ -164,7 +177,7 @@ do
 
  
  
-  // The displaySaveGameView method
+ // The displaySaveGameView method
  // Purpose: 
  // Parameters: none
  // Returns: none
