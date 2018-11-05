@@ -32,7 +32,8 @@ public MainMenuView()
 {
         theMenu = "\n" +
                    "**********************************\n" +
-                   "* CITY OF AARON: MAIN GAME MENU  *\n" +
+                   "           CITY OF AARON          \n" +
+                   "          MAIN GAME MENU          \n" +
                    "**********************************\n" +
                    " 1 - Start new game\n" +
                    " 2 - Get and start a saved game\n" +
@@ -168,17 +169,19 @@ do
  }
 
  
-
+ 
  // The displayHelpMenuView method
- // Purpose: displays the help menu of the game
+ // Purpose: displays the help menu 
  // Parameters: none
  // Returns: none
  // ===================================     
  public void displayHelpMenuView()
  {
-     System.out.println("\nStart display help menu view option selected.");
+     HelpMenuView helpMenu = new HelpMenuView();
+     helpMenu.displayHelpMenuView();
  }
-
+ 
+ 
  
  
  // The displaySaveGameView method
@@ -196,6 +199,6 @@ do
     
     
     
-    
+   
    
 }
