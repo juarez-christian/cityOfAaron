@@ -100,6 +100,15 @@ public class CropControlTest {
         assertEquals(expResult, result);  
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * Test of buyLand method, of class CropControl.
      */
@@ -183,10 +192,17 @@ public class CropControlTest {
         int acresToBuy = 0;
         int expResult = 2000;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
-        assertEquals(expResult, result);
-        
+        assertEquals(expResult, result); 
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
     
     /**
      * Test of setOffering method, of class CropControl.
@@ -259,8 +275,16 @@ public class CropControlTest {
         int expResult = 100;
         int result = CropControl.setOffering(percentageOffering, cropData);
         assertEquals(expResult, result);
-     
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /**
      * Test of feedPeople method, of class CropControl.
@@ -333,68 +357,12 @@ public class CropControlTest {
         assertEquals(expResult, result);  
     }
 
-    /*
-     * Test of sellLand method, of class CropControl.
-     *
-    @Test
-    public void testSellLand() {
-        System.out.println("sellLand");
-        int landPrice = 0;
-        int acresToSell = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.sellLand(landPrice, acresToSell, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of buyLand method, of class CropControl.
-     *
-    @Test
-    public void testBuyLand() {
-        System.out.println("buyLand");
-        int landPrice = 0;
-        int acresToBuy = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setOffering method, of class CropControl.
-     *
-    @Test
-    public void testSetOffering() {
-        System.out.println("setOffering");
-        int payOffering = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.setOffering(payOffering, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of feedPeople method, of class CropControl.
-     *
-    @Test
-    public void testFeedPeople() {
-        System.out.println("feedPeople");
-        int wheatForFood = 0;
-        CropData cropData = null;
-        int expResult = 0;
-        int result = CropControl.feedPeople(wheatForFood, cropData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    */
+   
+    
+    
+    
+    
+    
     
     
     
