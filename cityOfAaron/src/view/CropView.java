@@ -111,4 +111,28 @@ public class CropView {
         System.out.format("You now have %d bushels of wheat. ", cropData.getWheatInStore());
         
     }
+    
+ /**
+     * plantCropsView method
+     * Purpose: Display acres owned and wheat in store and then prompt user for amount
+     * they wish to use to plant crops
+     */
+    public static void plantCropsView() {
+        //display current land, wheat, and population
+        System.out.format("\n\nHow much land needed for crops?\nAcres of land owned: %d\n", cropData.getAcresOwned());
+        System.out.format("Bushels of Wheat in storehouse: %d\n", cropData.getWheatInStore());
+        System.out.format("Current city population: %d\n", cropData.getPopulation());
+        //display conditions needed to care for crops and prompt user for input
+        System.out.println("\n1 bushel of wheat can plant 2 acres, " +
+                           "while 1 person can take care of 10 acres planted.\n" +
+                           "How many acres of land do you wish to plant? ");
+        //get input and save
+        int toPlant;
+        toPlant = keyboard.nextInt();
+        //call plantCrops() method to plant crops
+        CropControl.plantCrops(toPlant, cropData);
+        //output acres planted for future harvest
+        System.out.format("\nYou have planted %d acres of land for next year's harvest.", cropData.getAcresPlanned());
+        System.out.format("\nCurrent wheat in storehoues: %d\n", cropData.getWheatInStore());
+    }
 }
