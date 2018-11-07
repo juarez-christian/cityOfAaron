@@ -36,12 +36,12 @@ public class CropView {
 
         // call the feedPeopleView( ) method
         feedPeopleView();
+       
+        // call the feedPeopleView( ) method
+        plantCropsView();
         
-        /**
-         * add calls to the other crop view methods as they are written:
-         * plantCropsView()
-         * displayCropsReportView()
-         */
+        // call the feedPeopleView( ) method
+        displayCropsReportView();
     }
 
     // The buyLandView method
@@ -143,9 +143,27 @@ public class CropView {
     // Returns: none
     // Author: Christian Juarez
     
-   // public static void displayCropsReportView() {
+    public static void displayCropsReportView() {
+        
+int theYearNumber = cropData.getYear();
+int howManyPeopleStarved = cropData.getHarvest();
+int howManyPeopleComeToTheCity = cropData.getNewPeople();
+int theCurretntPopulation = cropData.getPopulation();
+int theNumberOfAcresOfLandOwned = cropData.getAcresOwned();
+int theNumberOfBushelsPerAcreHarvested = cropData.getWheatForFood();
+int theTotalNumberOfBushelsOfWheatHarvested = cropData.getAcresPlanned();
+int theNumberOfBushelsOfWheatInStore = cropData.getWheatInStore();
     
-    
+
+System.out.format("Year:" + theYearNumber + " %n");
+System.out.format("People starved: " + howManyPeopleStarved + " %n");
+System.out.format("New People: " + howManyPeopleComeToTheCity + " %n");
+System.out.format("Population: " + theCurretntPopulation + " %n");
+System.out.format("Land owned by the city: " + theNumberOfAcresOfLandOwned + " %n");
+System.out.format("Bushels per acre harvested: " + theNumberOfBushelsPerAcreHarvested + " %n");
+System.out.format("Bushels of wheat harvested: " + theTotalNumberOfBushelsOfWheatHarvested + " %n");
+System.out.format("Bushels of wheat in store: " + theNumberOfBushelsOfWheatInStore + " %n");
+         }
     
     
 }
