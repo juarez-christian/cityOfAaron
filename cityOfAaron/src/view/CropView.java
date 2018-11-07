@@ -35,7 +35,7 @@ public class CropView {
         sellLandView();
 
         // call the feedPeopleView( ) method
-        // feedPeopleView();
+        feedPeopleView();
         
         /**
          * add calls to the other crop view methods as they are written:
@@ -135,4 +135,17 @@ public class CropView {
         System.out.format("\nYou have planted %d acres of land for next year's harvest.", cropData.getAcresPlanned());
         System.out.format("\nCurrent wheat in storehoues: %d\n", cropData.getWheatInStore());
     }
+    
+    
+    // The displayCropsReportView method
+    // Purpose: interface with the user input for display a report of the crops
+    // Parameters: none 
+    // Returns: none
+    // Author: Christian Juarez
+    
+   // public static void displayCropsReportView() {
+    
+    
+    
+    
 }
