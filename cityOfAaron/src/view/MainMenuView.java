@@ -160,8 +160,6 @@ do
  
  // The startSavedGame method
  // Purpose: loads and starts a saved game 
- // Parameters: none
- // Returns: none
  // ===================================     
  public void startSavedGame()
  {
@@ -172,8 +170,6 @@ do
  
  // The displayHelpMenuView method
  // Purpose: displays the help menu 
- // Parameters: none
- // Returns: none
  // ===================================     
  public void displayHelpMenuView()
  {
@@ -186,8 +182,6 @@ do
  
  // The displaySaveGameView method
  // Purpose: 
- // Parameters: none
- // Returns: none
  // ===================================     
  public void displaySaveGameView()
  {
@@ -195,7 +189,29 @@ do
  }
 
   
+ /**
+     * loadSavedGame Method
+     * Purpose: loading a previously saved game
+     */
+    public void loadSavedGame() {
+        System.out.println("This is the loadSavedGame method");
+    }
     
+    /**
+     * displayHelpMenu Method
+     * Purpose: display help menu
+     */
+    public void displayHelpMenu() {
+        System.out.println("This is the displayHelpMenu method");
+    }
+    
+    /**
+     * saveGame Method
+     * Purpose: save the existing game
+     */
+    public void saveGame() {
+        System.out.println("This is the saveGame method");
+    }   
     
     
     
