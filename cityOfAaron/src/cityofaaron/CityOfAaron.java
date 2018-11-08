@@ -85,6 +85,7 @@ public class CityOfAaron {
         myCropData.setHarvest(300);
         myCropData.setWheatForFood(200);
         myCropData.setAcresPlanted(500);
+        myCropData.setNumStarved(0);
         //testing the class
         System.out.println("The City of Aaron was founded in " + myCropData.getYear()
         + ".\nOur population was " + myCropData.getPopulation() 
