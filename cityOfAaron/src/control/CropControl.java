@@ -6,6 +6,7 @@
  * class contains all of the calculation methods for managing cropData
  */
 package control;
+
 import java.util.Random;
 import model.CropData;
 
@@ -17,26 +18,22 @@ public class CropControl {
 
 // Generate a random number for the price of an acre of land. 
 // Make this value between 17 and 27 bushels per acre.
-   
-   // constants
-   private static final int LAND_BASE = 17;
-   private static final int LAND_RANGE = 10;
-        
-   // random number generator
-   private static Random random = new Random();
-     
-   // calcLandCost() method
-   // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
-   // Parameters: none
-   // Returns: the land cost
-    
-    public static int calcLandCost()
-    {
-        int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;  
-        return landPrice;            
+    // constants
+    private static final int LAND_BASE = 17;
+    private static final int LAND_RANGE = 10;
+
+    // random number generator
+    private static Random random = new Random();
+
+    // calcLandCost() method
+    // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
+    // Parameters: none
+    // Returns: the land cost
+    public static int calcLandCost() {
+        int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;
+        return landPrice;
     }
-  
-    
+
 // sellLand method
 // Purpose: Sell land  - subtracts from the acres owned
 // Parameters: the price of land, the number of acres to sell, and
@@ -145,12 +142,11 @@ public class CropControl {
             return -1;
         }
         
-
         // wheatInStore = wheatInStore - wheatForPeople
         // updates wheatInStore variable
         wheatInStore -= wheatForFood;
         cropData.setWheatInStore(wheatInStore);
-
+        
         // wheat for people same as wheat for food
         // wheatForFood = newly set aside wheat for people + wheat already stored for people
         // update cropData.wheatForFood variable
@@ -196,4 +192,3 @@ public class CropControl {
     }
 
 }
-
