@@ -105,7 +105,7 @@ public class ListMenuView {
                 viewProvisions();
                 break;
             case 4: //list of game developers
-                viewAuthors();
+                viewDevelopers();
                 break;
             case 5: //back to Main Menu
         }
@@ -155,7 +155,7 @@ public class ListMenuView {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void viewAuthors() {
+    private void viewDevelopers() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
