@@ -8,31 +8,31 @@
 
  */
 package control;
+
 import model.*;
 import cityofaaron.*;
-
 
 /**
  *
  * @author _Chris_
  */
 public class GameControl {
+
     // createNewGame method
     public static void createNewGame(String _name) {
-    // Create a new Game object.
-    Game game = new Game();
-    // Create a new Player object
-    Player thePlayer = new Player();
-    thePlayer.setName(_name);
-    // Store the name of the player in the Player object
-    game.setthePlayer(thePlayer);
-    // Store a reference to the Player object in the Game object
-    // Create a CropData object
-    CropData cropData = new CropData();
-    // Initialize the data values in the CropData object
-    // Save a reference to the CropData object in the Game object
-            
-        
+        // Create a new Game object.
+        Game game = new Game();
+        // Create a new Player object
+        Player thePlayer = new Player();
+        thePlayer.setName(_name);
+        // Store the name of the player in the Player object
+        game.setthePlayer(thePlayer);
+        // Store a reference to the Player object in the Game object
+        // Create a CropData object
+        CropData cropData = new CropData();
+        // Initialize the data values in the CropData object
+        // Save a reference to the CropData object in the Game object
+
         cropData.setYear(0);
         cropData.setPopulation(100);
         cropData.setNewPeople(5);
@@ -42,15 +42,14 @@ public class GameControl {
         cropData.setAcresOwned(1000);
         cropData.setAcresPlanted(1000);
         cropData.setHarvest(3000);
-        cropData.setAcresPlanted(1000); 
-        
-        game.setCropData(cropData); 
+        cropData.setAcresPlanted(1000);
 
-    // Save a reference to the Game object in the static variable
-    // declared in the CityOfAaron class.
-    CityOfAaron.setTheGame(game);
+        game.setCropData(cropData);
+
+        // Save a reference to the Game object in the static variable
+        // declared in the CityOfAaron class.
+        CityOfAaron.setTheGame(game);
 
     }
 
-    
 }
