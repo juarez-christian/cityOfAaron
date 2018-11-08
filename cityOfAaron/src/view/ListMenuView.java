@@ -7,7 +7,6 @@ package view;
 
 /**
  *
- * @author Kachia Vang
  */
 public class ListMenuView {
     
