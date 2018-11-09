@@ -7,21 +7,18 @@
  * -------------------------------------------------------------
  */
 package view;
-
-import cityofaaron.*;
-import model.*;
 import java.util.Scanner;
+
 
 public class ListMenuView {
 
+    //  scanner
+    Scanner keyboard = new Scanner(System.in);
     //private String
     private String listMenu;
     //private int max
     private int max;
-    //private  scanner
-    private static Scanner keyboard = new Scanner(System.in);
-    //reference to a game object
-    private static Game theGame;
+    
 
     /*
      * The ListMenuView constructor
@@ -30,7 +27,7 @@ public class ListMenuView {
      * Returns: none
      */
     public ListMenuView() {
-        String ListMenu = "\n"
+         listMenu = "\n"
                 + "*********************************\n"
                 + "** CITY OF AARON: LIST MENU **\n"
                 + "*********************************\n"
@@ -38,7 +35,7 @@ public class ListMenuView {
                 + " 2 - List or view the tools in the storehouse\n"
                 + " 3 - List or view the provisions in the storehouse\n"
                 + " 4 - List or view the developers of this game\n"
-                + " 5 - Return to the Main Menu\n";
+                + " 5 - Return to the Game Menu\n";
         max = 5;
     }
     
@@ -48,13 +45,13 @@ public class ListMenuView {
      * Parameters: none
      * Returns: none
      */
-    public void displayMenuView() {
+    public void displayListMenuView() {
         int menuOption;
         do {
             // display the game menu
             System.out.println(listMenu);
             // get user input
-            menuOption = getMenuOption();
+            menuOption = getListMenuOption();
             // perform user action
             doAction(menuOption);
 
@@ -67,7 +64,7 @@ public class ListMenuView {
      * Parameters: none
      * Returns: none
      */
-    public int getMenuOption() {
+    public int getListMenuOption() {
         int userInput = 0;
         final int MAX = 5;
 
@@ -107,7 +104,9 @@ public class ListMenuView {
             case 4: //list of game developers
                 viewDevelopers();
                 break;
-            case 5: //back to Main Menu
+            case 5: //back to Game Menu
+                GameMenuView gameMenu  = new GameMenuView();
+                gameMenu.displayGameMenuView();
         }
     }
     
@@ -115,7 +114,7 @@ public class ListMenuView {
      * listAnimals Method 
      * write stub for action method
      */
-    public void listAnimals() {
+    public void viewAnimals() {
         System.out.println("This is the listAnimals method.");
     }
     
@@ -123,7 +122,7 @@ public class ListMenuView {
      * listTools Method 
      * write stub for action method
      */
-    public void listTools() {
+    public void viewTools() {
         System.out.println("This is the listTools method.");
     }
     
@@ -131,7 +130,7 @@ public class ListMenuView {
      * listProvisions Method 
      * write stub for action method
      */
-    public void listProvisions() {
+    public void viewProvisions() {
         System.out.println("This is the listProvisions method.");
     }
     
@@ -139,24 +138,8 @@ public class ListMenuView {
      * listTeams Method 
      * write stub for action method
      */
-    public void listTeams() {
-        System.out.println("This is the listTeams method.");
-    }
-
-    private void viewAnimals() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void viewTools() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void viewProvisions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void viewDevelopers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void viewDevelopers() {
+        System.out.println("This is the listDevelopers method.");
     }
 
     

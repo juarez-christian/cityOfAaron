@@ -6,9 +6,12 @@
 package view;
 
 import java.util.Scanner;
+import cityofaaron.*;
+import control.*;
 import model.*;
 
 public class GameMenuView {
+
 
     private String gameMenu;
     private int max;
@@ -36,17 +39,17 @@ public class GameMenuView {
      * @returns none
      * ====================================================================
      */
-    public void displayMenuView() {
-        int menuOption;
+    public void displayGameMenuView() {
+        int gameMenuOption;
         do {
             // display the game menu
             System.out.println(gameMenu);
             // get user input
-            menuOption = getMenuOption();
+            gameMenuOption = getGameMenuOption();
             // perform user action
-            doAction(menuOption);
+            doAction(gameMenuOption);
 
-        } while (menuOption != max);
+        } while (gameMenuOption != max);
     }
 
     /*
@@ -57,7 +60,7 @@ public class GameMenuView {
      * @returns none
      * ====================================================================
      */
-    public int getMenuOption() {
+    public int getGameMenuOption() {
         int userInput = 0;
         final int MAX = 5;
 
@@ -91,7 +94,7 @@ public class GameMenuView {
                 viewMap();
                 break;
             case 2: // view lists menu
-                viewList();
+                displayListMenuView();
                 break;
             case 3: // move to new location
                 moveToNewLocation();
@@ -100,7 +103,9 @@ public class GameMenuView {
                 manageCrops();
                 break;
             case 5: // return to main menu
-                return;
+                MainMenuView mmv = new MainMenuView();
+                mmv.displayMenuView();
+                break;
         }
     }
 
@@ -124,8 +129,10 @@ public class GameMenuView {
      * @returns none
      * ====================================================================
      */
-    public void viewList() {
-        System.out.println("This is the viewList method");
+    public void displayListMenuView() {
+     // System.out.println("This is the viewList method");
+        ListMenuView listMenu = new ListMenuView();
+        listMenu.displayListMenuView();
     }
 
     /*
