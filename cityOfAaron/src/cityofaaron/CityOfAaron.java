@@ -34,7 +34,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
     // TODO code application logic here    
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();       
+        mmv.displayMenu();   //  match with MenuView method    
 
     
         // player object creation

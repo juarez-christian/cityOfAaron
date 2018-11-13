@@ -11,19 +11,22 @@ import java.util.Scanner;
  * @author _Chris_
  */
  
-public class HelpMenuView {
-
+public class HelpMenuView extends MenuView{
+/* 
+Delete these variable declarations. They will be inherited from the abstract class MenuView
     Scanner keyboard = new Scanner(System.in);
     private String helpMenu;
     private int max;
-
+*/
+    
+    
 // The helpMenuView constructor
 // Purpose: Initialize the help menu data
 // Parameters: none
 // Returns: none
 // ===================================
     public HelpMenuView() {
-        helpMenu = "\n" +
+         super( "\n" +
                 "**************************************************\n" +
                 "                  CITY OF AARON                   \n" +
                 "                    HELP MENU                     \n" +
@@ -34,11 +37,17 @@ public class HelpMenuView {
                 + " 4 - How to I move to another location?\n"
                 + " 5 - How do I display a list of animals,\n "
                 + "    provisions and tools in the city storehouse?\n"
-                + " 6 - Back to the Main Menu.\n";
-
-        max = 6;
+                + " 6 - Back to the Main Menu.\n",
+                6);
     }
 
+    
+/*    
+Delete the code for these methods from the HelpMenuView class.
+We want this class to use the code for these methods that 
+is in the base abstract MenuView class.   
+    
+    
     // The displayHelpMenuView method
     // Purpose: displays the help menu of the game
     // Parameters: none
@@ -84,13 +93,16 @@ public class HelpMenuView {
         return userInput;
 
     }
+*/
 
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
-    // ===================================       
-    public void doAction(int option) {
+    // ===================================
+    
+    // Add the @Override annotation to the doAction( ) method
+    @Override public void doAction(int option) {
         switch (option) {
             case 1: // create and start a new game
                 goals();
@@ -109,7 +121,7 @@ public class HelpMenuView {
                 break;   
              case 6:
                 MainMenuView mmv = new MainMenuView();
-                mmv.displayMenuView();
+                mmv.displayMenu(); //  match with MenuView method
                 break;
         }
     }

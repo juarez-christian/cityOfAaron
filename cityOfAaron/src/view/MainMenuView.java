@@ -17,19 +17,22 @@ import java.util.Scanner;
  * @author _Chris_
  */
 
-public class MainMenuView {
-
+// adding extends keword so this class inherits from MenuView
+public class MainMenuView extends MenuView{
+/* 
+Delete these variable declarations. They will be inherited from the abstract class MenuView
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
-
+*/
+    
 // The MainMenuView constructor
 // Purpose: Initialize the menu data
 // Parameters: none
 // Returns: none
 // ===================================
     public MainMenuView() {
-        theMenu = "\n"
+           super( "\n"
                 + "**********************************\n"
                 + "           CITY OF AARON          \n"
                 + "          MAIN GAME MENU          \n"
@@ -38,11 +41,17 @@ public class MainMenuView {
                 + " 2 - Get and start a saved game\n"
                 + " 3 - Get help on playing the game\n"
                 + " 4 - Save game\n"
-                + " 5 - Quit\n";
-
-        max = 5;
+                + " 5 - Quit\n",     // arguments " , "
+                5);
     }
 
+    
+/*    
+Delete the code for these methods from the MainMenuView class.
+We want this class to use the code for these methods that 
+is in the base abstract MenuView class.
+
+    
     // The displayMenuView method
     // Purpose: displays the menu, gets the user's input, and does the 
     //               selected action
@@ -89,13 +98,16 @@ public class MainMenuView {
         return userInput;
 
     }
-
+*/
+    
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
-    // ===================================       
-    public void doAction(int option) {
+    // =================================== 
+    
+    // Add the @Override annotation to the doAction( ) method
+    @Override public void doAction(int option) {
         switch (option) {
             case 1: // create and start a new game
                 startNewGame();
@@ -111,6 +123,7 @@ public class MainMenuView {
                 break;
             case 5:
                 System.out.println("Thanks for playing ... goodbye.");
+                break;
         }
     }
 
@@ -155,8 +168,8 @@ public class MainMenuView {
     // Purpose: displays the help menu 
     // ===================================     
     public void displayHelpMenuView() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        HelpMenuView hmv = new HelpMenuView();
+        hmv.displayMenu();
     }
 
     // The displaySaveGameView method

@@ -104,7 +104,7 @@ public class GameMenuView {
                 break;
             case 5: // return to main menu
                 MainMenuView mmv = new MainMenuView();
-                mmv.displayMenuView();
+                mmv.displayMenu();
                 break;
         }
     }
