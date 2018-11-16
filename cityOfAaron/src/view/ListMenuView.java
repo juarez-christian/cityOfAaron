@@ -13,9 +13,6 @@ import model.*;
 
 public class ListMenuView extends MenuView{
     private Game game = CityOfAaron.getTheGame();
-
-    
-    
     /*
      * The ListMenuView constructor
      * Purpose: to initialize the list menu data
@@ -36,6 +33,7 @@ public class ListMenuView extends MenuView{
     }
     
     /**
+     * The doAction method
      * Purpose: To perform the player's desired action<p>
      * @Param none
      */
