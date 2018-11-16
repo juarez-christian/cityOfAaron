@@ -5,21 +5,16 @@
  */
 package view;
 
+import cityofaaron.CityOfAaron;
 import java.util.Scanner;
-import cityofaaron.*;
-import control.*;
 import model.*;
 
-public class GameMenuView {
+public class GameMenuView extends MenuView {
 
-
-    private String gameMenu;
-    private int max;
-    private static Scanner keyboard = new Scanner(System.in);
-    private Game theGame;
+private Game theGame = CityOfAaron.getTheGame();
 
     public GameMenuView() {
-        gameMenu = "\n"
+        super( "\n" 
                 + "*********************************\n"
                 + "** CITY OF AARON: IN-GAME MENU **\n"
                 + "*********************************\n"
@@ -27,74 +22,26 @@ public class GameMenuView {
                 + " 2 - View/Print a list\n"
                 + " 3 - Move to a new location\n"
                 + " 4 - Manage the crops\n"
-                + " 5 - Return to the Main menu\n";
-        max = 5;
+                + " 5 - Return to the Main menu\n"
+                , 5);
     }
-
-    /*
-     * displayMenuView Method 
-     * Purpose: Dislay the Game Menu 
-     * Pre-Conditions
-     * @param none
-     * @returns none
-     * ====================================================================
-     */
-    public void displayGameMenuView() {
-        int gameMenuOption;
-        do {
-            // display the game menu
-            System.out.println(gameMenu);
-            // get user input
-            gameMenuOption = getGameMenuOption();
-            // perform user action
-            doAction(gameMenuOption);
-
-        } while (gameMenuOption != max);
-    }
-
-    /*
-     * getMenuOption Method 
-     * Purpose: Get users input for menu option
-     * Pre-Conditions     *
-     * @param none
-     * @returns none
-     * ====================================================================
-     */
-    public int getGameMenuOption() {
-        int userInput = 0;
-        final int MAX = 5;
-
-        // begin loop
-        do {
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            // if it is not a valid value, output an error message
-            if (userInput < 1 || userInput > MAX) {
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-            }
-            // loop back to the top of the loop if input was not valid
-            // end loop
-        } while (userInput < 1 || userInput > MAX);
-
-        // return userinput
-        return userInput;
-    }
-
-    /*
+    
+     /**
      * doAction Method 
-     * Purpose: Perform action selected by user 
-     * Pre-Conditions
-     * @param none
+     * Purpose: Perform the actions selected by user
+     * Pre-Conditions:
+     * @param option user input 1-5
      * @returns none
      * ====================================================================
-     */
-    public void doAction(int option) {
-        switch (option) {
+     */ 
+        @Override public void doAction(int option) {
+        switch(option)
+        {
             case 1: // view map
                 viewMap();
                 break;
             case 2: // view lists menu
-                displayListMenuView();
+                viewList();
                 break;
             case 3: // move to new location
                 moveToNewLocation();
@@ -103,17 +50,15 @@ public class GameMenuView {
                 manageCrops();
                 break;
             case 5: // return to main menu
-                MainMenuView mmv = new MainMenuView();
-                mmv.displayMenu();
-                break;
+                return;
         }
     }
-
-    /*
+        
+         /**
      * viewMap Method 
-     * Purpose: View map locations 
-     * Pre-Conditions
-     * @param none
+     * Purpose: View map locations
+     * Pre-Conditions:
+     * @param
      * @returns none
      * ====================================================================
      */
@@ -121,23 +66,22 @@ public class GameMenuView {
         System.out.println("This is the viewMap method.");
     }
 
-    /*
+    /**
      * viewList Method 
-     * Purpose: view list menu 
+     * Purpose: view list menu
      * Pre-Conditions
      * @param none
      * @returns none
      * ====================================================================
      */
-    public void displayListMenuView() {
-     // System.out.println("This is the viewList method");
-        ListMenuView listMenu = new ListMenuView();
-        listMenu.displayListMenuView();
+    public void viewList() {
+        ListMenuView lmv = new ListMenuView();
+        lmv.displayMenu();
     }
 
-    /*
+    /**
      * moveToNewLocation Method 
-     * Purpose: Change players location 
+     * Purpose: Change players location
      * Pre-Conditions     
      * @param none
      * @returns none
@@ -147,14 +91,14 @@ public class GameMenuView {
         System.out.println("This is the moveToNewLocation method.");
     }
 
-    /*
-     * manageCrops Method Purpose: manage crops 
-     * Pre-Conditions
-     * @param none
-     * @returns none
-     * ====================================================================
+    /**
+     * manageCrops Method 
+     * Purpose: manage crops
      */
     public void manageCrops() {
-        System.out.println("This is the manageCrops method.");
+        //Display the crop management view
+        CropView.runCropView();
     }
+
 }
+   

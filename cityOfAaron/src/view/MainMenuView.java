@@ -153,7 +153,7 @@ is in the base abstract MenuView class.
 
         // Display the Game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.displayMenu();
 
     }
 
