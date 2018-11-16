@@ -12,11 +12,6 @@ import model.*;
 
 import java.util.Scanner;
 
-/**
- *
- * @author _Chris_
- */
-
 // adding extends keword so this class inherits from MenuView
 public class MainMenuView extends MenuView{
 /* 
