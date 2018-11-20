@@ -16,7 +16,7 @@ public class Map {
     private int colCount;           // this stores the number og columns
     private Location[][] locations; // this is a reference to a two dimensional array
                                     // of location objects
-    // constructors
+ // constructors
     // default Map constructor
     // Purpose: Set data members to default values
     // Parameters: none
@@ -38,18 +38,35 @@ public class Map {
          locations = new Location[_rows][_cols];        
     }
     
-    // getters
+    
+// getters
+    // The getRowCount method
+    // Purpose: returns the location object at the given row and column
+    // Parameters:
+    // Returns: 
+    public int getRowCount()
+    {
+        return rowCount;
+    }
+
+    // The getColCount method
+    // Purpose: 
+    // Parameters: 
+    // Returns: 
+    public int getColCount() {
+        return colCount;
+    }
+
     // The getLocation method
     // Purpose: returns the location object at the given row and column
     // Parameters: a row and column
     // Returns: a Location object
-    public Location getLocation(int row, int col)
-    {
+    public Location getLocation(int row, int col) {
         return locations[row][col];
     }
     
     
-    // setter
+// setter
     // The setLocation method
     // Purpose: stores a location object at the  row and column
     // Parameters: a row and column, and a reference to a location object

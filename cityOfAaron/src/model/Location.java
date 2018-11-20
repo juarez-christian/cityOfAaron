@@ -26,9 +26,9 @@ public class Location {
         this.description = _description;
     }
     
-     public String getSymbol () {
+    public String getSymbol () {
         return this.symbol;
-     }
+    }
      
          public void setSymbol (String _symbol) {
         this.symbol = _symbol;
