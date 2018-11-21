@@ -54,7 +54,7 @@ private Game theGame = CityOfAaron.getTheGame();
         }
     }
         
-         /**
+    /**
      * viewMap Method 
      * Purpose: View map locations
      * Pre-Conditions:
@@ -81,8 +81,7 @@ private Game theGame = CityOfAaron.getTheGame();
 
     /**
      * moveToNewLocation Method 
-     * Purpose: Change players location
-     * Pre-Conditions     
+     * Purpose: Change players location    
      * @param none
      * @returns none
      * ====================================================================
