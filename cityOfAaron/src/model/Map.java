@@ -5,13 +5,14 @@
  *  Team members:  Ching Lo, Kachia Vang, Christian Juarez
  */
 package model;
+import java.io.Serializable;
 
 /**
  *
  * @authors Ching Lo, Kachia Vang, Christian Juarez
  */
-public class Map {
-    // declarations
+public class Map implements Serializable {
+// declarations
     private int rowCount;           // this stores the number of rows
     private int colCount;           // this stores the number og columns
     private Location[][] locations; // this is a reference to a two dimensional array
@@ -75,8 +76,5 @@ public class Map {
     {
         locations[row][col] = _location;
     } 
-
-
-
     
 }
