@@ -55,15 +55,15 @@ public class GameControl {
         cropData.setNewPeople(5);
         cropData.setCropYield(3);
         cropData.setNumberWhoDied(0);
-        cropData.setOffering(10);
+        cropData.setSetOffering(10);
         cropData.setWheatInStore(2700);
         cropData.setAcresOwned(1000);
         cropData.setAcresPlanted(1000);
         cropData.setHarvest(3000);
-        cropData.setOfferingBushels(300);
+  //    cropData.setOfferingBushels(300);
         cropData.setAcresPlanted(1000); 
         
-        game.setCropData(cropData);
+        theGame.setCropData(cropData);
         
         }
 
@@ -72,10 +72,16 @@ public class GameControl {
         CityOfAaron.setTheGame(game);
         
         
-       
-    
-
-
+             
+     /*
+       Public static void createProvisionsList() {
+           ArrayList<ListItem> provisions = new ArrayList<>();
+           
+           provisions.add(new ListItem("provision 1", 135));
+           
+           Game.setProvisions(provisions);
+       }
+     */
     }
 
 }
