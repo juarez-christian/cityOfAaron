@@ -191,7 +191,8 @@ public class GameControl {
         location.setSymbol("!!!");
         // Set this object in each cell of the array in row 5
         for(int i = 0; i < MAX_COL; i++) {
-            theMap.setLocation(5, i, location);
+        //  theMap.setLocation(5, i, location);
+            theMap.setLocation(4, i, location);
         }
         
         // Save the Map object in the game
