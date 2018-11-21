@@ -9,10 +9,6 @@ package model;
 import java.io.Serializable;
 
 
-/**
- *
- * @author _Chris_
- */
 public class ListItem implements Serializable
 {
     private String name;
@@ -20,6 +16,11 @@ public class ListItem implements Serializable
 
     // public, empty constructor
     public ListItem() {};
+
+    public ListItem(String name, int number) {
+        this.name = name;
+        this.number = number;
+    }
     
     // name's getter and setter
     public String getName()
