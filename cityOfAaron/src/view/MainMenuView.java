@@ -6,11 +6,8 @@
  */
 package view;
 
-import cityofaaron.*;
 import control.*;
-import model.*;
 
-import java.util.Scanner;
 
 // adding extends keword so this class inherits from MenuView
 public class MainMenuView extends MenuView{
