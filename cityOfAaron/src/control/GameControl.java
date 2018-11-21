@@ -40,6 +40,7 @@ public class GameControl {
         // call to methods
         createMap();
         createAnimalList();
+        createProvisionsList();
     }
         
         
@@ -232,15 +233,20 @@ public class GameControl {
      * List of Provisions
      * Author: Christian Juarez
     */
-    /*
-    Public static void createProvisionsList() {
-        ArrayList<ListItem> provisions = new ArrayList<>();
+                  
+    public static void createProvisionsList() {
+        ArrayList<ListItem>provisions = new ArrayList<>();
            
-        provisions.add(new ListItem("provision 1", 135));
-           
+        provisions.add(new ListItem("provision 1", 134));
+        provisions.add(new ListItem("provision 2", 13));
+        provisions.add(new ListItem("provision 3", 1));
+        provisions.add(new ListItem("provision 4", 11));
+        provisions.add(new ListItem("provision 5", 5));
+        provisions.add(new ListItem("provision 6", 35));
+        provisions.add(new ListItem("provision 7", 15));
+        
         game.setProvisions(provisions);
-       }
-     */
+    }
+    
 }
-
 
