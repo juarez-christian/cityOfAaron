@@ -10,15 +10,70 @@ import model.*;
 import control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import java.io.Serializable;
 
-public class CropView {
+public class CropView extends MenuView implements Serializable {
 
     // Create a Scanner object
     private static Scanner keyboard = new Scanner(System.in);
 
     // Get references to the Game object and the CropData object
-    static private Game game = CityOfAaron.getTheGame();
-    static private CropData cropData = game.getcropData();
+    private static Game game = CityOfAaron.getTheGame();
+    private static CropData cropData = game.getcropData();
+    
+       /**
+*	The MainMenuView constructor
+*	Purpose: Initialize the menu data
+*	Parameters: none
+*	Returns: none
+*/
+// ===================================
+public CropView()
+{
+    super("\n" +
+        "**********************************\n" +
+        "* CITY OF AARON: Crop Control  *\n" +
+        "**********************************\n\n" +
+        "	1 - Buy Land\n" +
+        "       2 - Sell Land\n" +
+        "	3 - Feed People\n" + 
+        "       4 - Plant Crops\n" + 
+        "       5 - Display Crop Report\n" +
+        "       6 - Return\n",
+    9);
+}
+ /**
+    *   The doAction method
+    *	Purpose: performs the selected action
+    *	Parameters: none
+    *	Returns: none
+     * @param option
+    */
+    // ===================================
+    @Override public void doAction(int option)
+    {
+        switch (option)
+        {
+            case 1: // View goals of game
+                buyLandView();
+                break;
+            case 2: // View Whereis Viry of Aaron
+                sellLandView();
+                break;
+            case 3: // View Map Help
+                feedPeopleView();;
+                break;
+            case 4: // View move help
+                plantCropsView();
+                break;
+            case 5: // View lists help
+                displayCropsReportView(); 
+                break;            
+            case 6: //exit back main menu
+            
+ 
+        }
+    }  
 
     /**
      * The runCropView method() Purpose: runs the methods to manage the crops
