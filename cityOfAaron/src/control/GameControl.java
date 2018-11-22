@@ -32,7 +32,7 @@ public class GameControl {
         game.setthePlayer(thePlayer);
         
         // Save a reference to the Game object
-        //CityOfAaron.setGame(game);
+        CityOfAaron.setTheGame(game);
         
         // call to method
         createCropDataObject();
@@ -248,6 +248,7 @@ public class GameControl {
         
         game.setProvisions(provisions);
     }
+
     
 }
 
