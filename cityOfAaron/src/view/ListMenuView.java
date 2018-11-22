@@ -8,6 +8,7 @@
  */
 package view;
 import cityofaaron.CityOfAaron;
+import control.GameControl;
 import model.*;
 
 
@@ -35,6 +36,7 @@ public class ListMenuView extends MenuView{
     /**
      * The doAction method
      * Purpose: To perform the player's desired action<p>
+     * @param option
      * @Param none
      */
     @Override public void doAction(int option) {
@@ -52,8 +54,7 @@ public class ListMenuView extends MenuView{
                 listTeam();
                 break;
             case 5: //Return to the calling menu
-                return;
-        }
+                    }
     }
     
     /**
@@ -61,7 +62,9 @@ public class ListMenuView extends MenuView{
      * @Param none
      */
     public void listAnimals() {
-        System.out.println("Display a list of animals here");
+        // System.out.println("Display a list of animals here"); //removed stub
+        // display list code
+
     }
     
     /**
