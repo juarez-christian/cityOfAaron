@@ -6,6 +6,7 @@
 package view;
 
 import cityofaaron.CityOfAaron;
+import control.GameControl;
 import java.util.Scanner;
 import model.*;
 
@@ -63,15 +64,15 @@ private Game theGame = CityOfAaron.getTheGame();
      * ====================================================================
      */
     public void viewMap() {
-        System.out.println("This is the viewMap method.");
+       System.out.println("This is the viewMap method.");
     }
 
     /**
      * viewList Method 
-     * Purpose: view list menu
-     * Pre-Conditions
-     * @param none
-     * @returns none
+     * Purpose: Creates a ListMenuView 
+     *   and calls its displayMenu() method
+     * Parameters: none
+     * Returns: none
      * ====================================================================
      */
     public void viewList() {
@@ -82,8 +83,8 @@ private Game theGame = CityOfAaron.getTheGame();
     /**
      * moveToNewLocation Method 
      * Purpose: Change players location    
-     * @param none
-     * @returns none
+     * Parameters: none
+     * Return: none
      * ====================================================================
      */
     public void moveToNewLocation() {
