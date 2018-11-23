@@ -27,7 +27,7 @@ public class Game implements Serializable
     //variable for keeping a reference to the animals ListItem object
     private ArrayList<ListItem> tools = null;
     //variable for keeping a reference to the animals ListItem object
-    private ArrayList<ListItem> provisions = null;
+    private ArrayList<ListItem> provisions;
     
     public Game() {};
     
@@ -90,5 +90,6 @@ public class Game implements Serializable
     {
         this.provisions = provisions;
     }
+    
     
 }

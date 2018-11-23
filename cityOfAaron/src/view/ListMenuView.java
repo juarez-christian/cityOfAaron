@@ -9,6 +9,7 @@
 package view;
 import cityofaaron.CityOfAaron;
 import control.GameControl;
+import java.util.ArrayList;
 import model.*;
 
 
@@ -67,6 +68,9 @@ public class ListMenuView extends MenuView{
 
     }
     
+    
+    
+    
     /**
      * Purpose: Display the list of tools that the player has<p>
      * @Param none
@@ -75,21 +79,46 @@ public class ListMenuView extends MenuView{
         System.out.println("Display a list of tools here");
     }
 
+    
+    
+    
     /**
      * Purpose: Display the list the provisions that the player has<p>
      * @Param none
+     * Author: Christian
      */
     public void listProvisions() {
-        System.out.println("Display a list of provisions here");
+      // System.out.println("Display a list of provisions here");
+      // get the ArrayList from the Game object
+      Game theGame = CityOfAaron.getTheGame();
+      ArrayList<ListItem>provisions = theGame.getProvisions();
+		
+      for(ListItem provision : provisions) { 
+	System.out.println(provision.toString()); 		
+      }
+
+      int i = 0;
+		
+      // get the ListItem out of the ArrayList
+      ListItem provision = provisions.get(i);
+
+      // display the name of the item and the number of items
+      System.out.println(provision.getName() + "\t" + provision.getNumber() );
+     
     }
+    
+    
+    
     
     /**
      * Purpose: List the team members that created this application<p>
      * @Param none
+     * Author:
      */
     public void listTeam() {
         System.out.println("Display the team members here");
     }
 
 }
+        
     
