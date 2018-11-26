@@ -40,7 +40,9 @@ public class GameControl {
         // call to methods
         createMap();
         createAnimalList();
+        createToolList();
         createProvisionsList();
+        createTeamList();
     }
         
         
@@ -208,7 +210,7 @@ public class GameControl {
      * List of Animals
      * Author: Ching Lo
      *
-    */
+     */
     public static void createAnimalList() {
         ArrayList<ListItem>animals = new ArrayList<>();
         
@@ -218,7 +220,6 @@ public class GameControl {
         animals.add(new ListItem("horses", 25));
         animals.add(new ListItem("sheep", 13));
         animals.add(new ListItem("goats", 16));
-        animals.add(new ListItem("ducks", 7));
         
         game.setAnimals(animals);
     }
@@ -228,13 +229,23 @@ public class GameControl {
      * List of Tools
      * Author: Kachia Vang
     */
+    public static void createToolList() {
+        ArrayList<ListItem>tools = new ArrayList<>();
+        
+        tools.add(new ListItem("nails", 500));
+        tools.add(new ListItem("hammer", 10));
+        tools.add(new ListItem("shovel", 35));
+        tools.add(new ListItem("axe", 25));
+        tools.add(new ListItem("plows", 33));
+        
+        game.setTools(tools);
+    }
     
     
     /*
      * List of Provisions
      * Author: Christian Juarez
-    */
-                  
+    */                  
     public static void createProvisionsList() {
         ArrayList<ListItem>provisions = new ArrayList<>();
            
@@ -247,6 +258,21 @@ public class GameControl {
         provisions.add(new ListItem("provision 7", 15));
         
         game.setProvisions(provisions);
+    }
+    
+    /*
+     * List of Team Members
+     * Author: Ching Lo
+     *
+     */
+    public static void createTeamList() {
+        ArrayList<ListItem>team = new ArrayList<>();
+        
+        team.add(new ListItem("Ching", 1));
+        team.add(new ListItem("Christian", 1));
+        team.add(new ListItem("Kachia", 1));   
+        
+        game.setTeam(team);
     }
 
     
