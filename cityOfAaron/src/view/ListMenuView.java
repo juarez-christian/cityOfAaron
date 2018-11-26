@@ -10,6 +10,7 @@ package view;
 import cityofaaron.CityOfAaron;
 import control.GameControl;
 import java.util.ArrayList;
+import java.io.PrintStream;
 import model.*;
 
 
@@ -61,64 +62,94 @@ public class ListMenuView extends MenuView{
     /**
      * Purpose: Display the list of animals that the player has<p>
      * @Param none
+     * Author: Ching Lo
      */
     public void listAnimals() {
         // System.out.println("Display a list of animals here"); //removed stub
         // display list code
-
+        ArrayList<ListItem> animals = game.getAnimals();
+        System.out.println("City of Aaron - Animal List");
+        
+        /*System.out.println("Here is a list of animals\n" +
+                "------------------------------------");
+        for (ListItem animal: animals) {
+            System.out.println(animal.getName() + "\t" + animal.getNumber());
+        }
+        */
+        
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %30s", "ANIMALS", "QUANTITY");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------");
+        for(ListItem animal: animals){
+            System.out.format("%10s %30s",animal.getName(), animal.getNumber());
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------");
     }
-    
-    
-    
     
     /**
      * Purpose: Display the list of tools that the player has<p>
      * @Param none
      */
     public void listTools() {
-        System.out.println("Display a list of tools here");
+        // System.out.println("Display a list of tools here"); //removed stub
+        // display list code
+        ArrayList<ListItem> tools = game.getTools();
+        System.out.println("City of Aaron - Tools List");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %30s", "TOOLS", "QUANTITY");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------");
+        for(ListItem tool: tools){
+            System.out.format("%10s %30s",tool.getName(), tool.getNumber());
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------");
     }
-
     
-    
-    
-    /**
+    /*
      * Purpose: Display the list the provisions that the player has<p>
      * @Param none
      * Author: Christian
-     */
+     */     
     public void listProvisions() {
       // System.out.println("Display a list of provisions here");
       // get the ArrayList from the Game object
-      Game theGame = CityOfAaron.getTheGame();
-      ArrayList<ListItem>provisions = theGame.getProvisions();
-		
-      for(ListItem provision : provisions) { 
-	System.out.println(provision.toString()); 		
-      }
-
-      int i = 0;
-		
-      // get the ListItem out of the ArrayList
-      ListItem provision = provisions.get(i);
-
-      // display the name of the item and the number of items
-      System.out.println(provision.getName() + "\t" + provision.getNumber() );
-     
-    }
+      ArrayList<ListItem> provisions = game.getProvisions();
+        System.out.println("City of Aaron - Provisions List");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %30s", "PROVISION", "QUANTITY");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------");
+        for(ListItem provision: provisions){
+            System.out.format("%10s %30s",provision.getName(), provision.getNumber());
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------");
+    }    
     
-    
-    
-    
-    /**
+    /*
      * Purpose: List the team members that created this application<p>
      * @Param none
-     * Author:
+     * Author: Ching Lo
      */
     public void listTeam() {
-        System.out.println("Display the team members here");
+        // System.out.println("Display the team members here");
+        ArrayList<ListItem> team = game.getTeam();
+        System.out.println("City of Aaron - Team Members List");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %30s", "MEMBERS", "QUANTITY");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------");
+        for(ListItem teams: team){
+            System.out.format("%10s %30s",teams.getName(), teams.getNumber());
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------");
     }
 
 }
+
         
-    
+  
