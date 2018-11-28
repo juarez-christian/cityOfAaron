@@ -8,6 +8,7 @@ package view;
 
 import model.*;
 import control.*;
+import exceptions.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import java.io.Serializable;
@@ -104,21 +105,35 @@ public CropView()
     public static void buyLandView() {
         // Get the cost of land for this round.
         int price = CropControl.calcLandCost();
-
-        // Prompt the user to enter the number of acres to buy
+        
         System.out.format("Land is selling for %d bushels per acre.%n", price);
-        System.out.print("\nHow many acres of land do you wish to buy? ");
-
+        
         //  Get the user’s input and save it.
         int toBuy;
-        toBuy = keyboard.nextInt();
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            // Prompt the user to enter the number of acres to buy
+            System.out.print("\nHow many acres of land do you wish to buy? ");
+            toBuy = keyboard.nextInt();
 
-        // Call the buyLand( ) method in the control layer to buy the land
-        CropControl.buyLand(price, toBuy, cropData);
-
+            // add the try block call that could throw an exception
+            try {
+                // Call the buyLand( ) method in the control layer to buy the land
+                CropControl.buyLand(price, toBuy, cropData);
+            }
+            // catch block to be executed when there is an exception 
+            catch(CropException e){
+                System.out.println("I am sorry, but I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        }
+        while(paramsNotOkay);
+        
         // output how much land we now own
         System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
-    }
+    }  
 
     // The sellLandView method
     // Purpose: interface with the user input for selling
