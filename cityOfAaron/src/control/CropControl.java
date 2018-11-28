@@ -9,6 +9,7 @@ package control;
 
 import java.util.Random;
 import model.CropData;
+import exceptions.*;
 
 /**
  *
@@ -73,16 +74,17 @@ public class CropControl {
 // Returns: the total acres owned after the purchase
 // Pre-conditions: acres to buy must be positive
 //     	and <= the number of wheat owned
+// Updated 11-28-18 to Throw Exceptions
     // method signature
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
-        // if acresToBuy < 0, return -1
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException {
+        // if acresToBuy < 0, throw exception
         if (acresToBuy < 0) {
-            return -1;
+            throw new CropException("A negative value was entered.");
         }
-        // if acresToBuy > wheatInStore,  return -1
+        // if acresToBuy > wheatInStore,  throw exception
         int owned = cropData.getWheatInStore();
         if ((acresToBuy * landPrice) > cropData.getWheatInStore()) {
-            return -1;
+            throw new CropException("There is insufficient wheat to buy this much land.");
         }
         // acresOwned = acresOwned + acresToBuy
         owned += acresToBuy;
@@ -91,8 +93,8 @@ public class CropControl {
         int stored = cropData.getWheatInStore();
         stored -= (acresToBuy * landPrice);
         cropData.setWheatInStore(stored);
-        // return acresOwned
-        return owned;
+        // remove return, and update CropData objecct with acres owned after buying
+        cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
     }
 
 // author Christian Juarez
