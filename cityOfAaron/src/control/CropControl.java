@@ -93,7 +93,7 @@ public class CropControl {
         int stored = cropData.getWheatInStore();
         stored -= (acresToBuy * landPrice);
         cropData.setWheatInStore(stored);
-        // remove return, and update CropData objecct with acres owned after buying
+        // remove return, and update CropData object with acres owned after buying
         cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
     }
 
@@ -132,16 +132,17 @@ public class CropControl {
 // @return the number of wheat in store
 // Pre-conditions: wheat to set aside for food must be positive
 //    and <= the number of wheat in store
+// Updated 11-30-18 to Throw Exceptions
     // method signature
-    public static int feedPeople(int wheatForFood, CropData cropData) {
-        //if wheatForFood < 0, return -1
+    public static void feedPeople(int wheatForFood, CropData cropData) throws CropException {
+        //if wheatForFood < 0, throw exception
         if (wheatForFood < 0) {
-            return -1;
+            throw new CropException("The number entered must be greater than 0.");
         }
-        // if wheatForFood > wheatInStore,  return -1
+        // if wheatForFood > wheatInStore,  throw exception
         int wheatInStore = cropData.getWheatInStore();
         if (wheatForFood > wheatInStore) {
-            return -1;
+            throw new CropException("There is insufficient wheat in store to feed people.");
         }
         
         // wheatInStore = wheatInStore - wheatForPeople
@@ -153,9 +154,8 @@ public class CropControl {
         // wheatForFood = newly set aside wheat for people + wheat already stored for people
         // update cropData.wheatForFood variable
         wheatForFood += cropData.getWheatForFood();
+        // remove "return wheatForFood" and update CropData object
         cropData.setWheatForFood(wheatForFood);
-
-        return wheatForFood;
     }
 
 // author Kachia Vang
