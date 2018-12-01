@@ -159,25 +159,37 @@ public CropView()
         System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
     }
 
+    // Author: Ching Lo
     // The feedPeopleView method
     // Purpose: interface with the user input for feeding the people
     // Parameters: none 
     // Returns: none
-    // Author: Ching Lo
     public static void feedPeopleView() {
         // Prompt the user to enter the number of bushels to feed people
-        System.out.print("How many bushels of grain do you want to give to the people? ");
+        System.out.print("How many bushels of grain do you want to give to feed the people? ");
 
         // Get the user’s input and save it.
         int wheatForFood;
-        wheatForFood = keyboard.nextInt();
-
-        // Call the feedPeople( ) method in the control layer 
-        CropControl.feedPeople(wheatForFood, cropData);
-
+        boolean paramsNotOkay;
+        do {
+            paramsNotOkay = false;
+            wheatForFood = keyboard.nextInt();
+            // add the try block call that could throw an exception
+            try {
+                // Call the feedPeople( ) method in the control layer
+                CropControl.feedPeople(wheatForFood, cropData);
+            }
+            // add catch block to be executred when there is an exception
+            catch(CropException e){
+                System.out.println("I'm sorry, but you cannot feed people with this number.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        }
+        while(paramsNotOkay);
+        
         // output how much bushels of wheat we have left
-        System.out.format("You now have %d bushels of wheat. ", cropData.getWheatInStore());
-
+        System.out.format("You now have %d bushels of wheat left after feeding people. ", cropData.getWheatInStore());
     }
 
     // plantCropsView method
