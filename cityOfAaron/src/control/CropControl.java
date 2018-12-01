@@ -42,16 +42,16 @@ public class CropControl {
 // Pre-conditions: acresToSell >= 0 and acresToSell <= acresOwned
 // Returns: the number of acres owned after the sale
     // method signature
-    public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
-        //if acresToSell < 0, return -1
+    public static int sellLand(int landPrice, int acresToSell, CropData cropData) throws CropException {
+        //if acresToSell < 0, Throw exception that entry was too low
         if (acresToSell < 0) {
-            return -1;
+            throw new CropException("A negative number was entered.");
         }
 
-        //if acresToSell > acresOwned, return -1
+        //if acresToSell > acresOwned, Throw exception that entry was too low
         int owned = cropData.getAcresOwned();
         if (acresToSell > owned) {
-            return -1;
+            throw new CropException("Quantity greater than acres owned was entered.");
         }
 
         //acresOwned = acresOwned - acresToSell

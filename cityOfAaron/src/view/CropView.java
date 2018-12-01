@@ -143,21 +143,40 @@ public CropView()
     public static void sellLandView() {
         // Get the cost of land for this round.
         int price = CropControl.calcLandCost();
-
+        boolean paramsNotOkay;
+        do {
+            // Set variable to check for exceptions
+            paramsNotOkay = false;
+            // Variable for getting user input
+        int toSell;
+       
         // Prompt the user to enter the number of acres to sell
         System.out.format("Land is selling for %d bushels per acre.%n", price);
-        System.out.print("\nHow many acres of land do you wish to sell? ");
-
-        //  Get the user’s input and save it.
-        int toSell;
+        System.out.print("\nHow many acres of land do you want to sell? ");
         toSell = keyboard.nextInt();
 
-        // Call the sellLand( ) method in the control layer to sell the land
-        CropControl.sellLand(price, toSell, cropData);
+        
+            try {
+                //call sellLand() method in the control layer to sell the land
+                CropControl.sellLand(price, toSell, cropData);
 
-        // output how much land we now own
-        System.out.format("You now own %d acres of land. ", cropData.getAcresOwned());
+            } 
+            //add catch block to be executed when there is an exception
+            catch(CropException e){
+                // Print exception report to user
+                System.out.println("I am sorry master, I cannot do this.");
+                System.out.println(e.getMessage());
+                paramsNotOkay
+                        = true;
+
+            }
+        } while (paramsNotOkay);
+        //output updated land owned and wheat in storehouse
+        System.out.format("\nCurrent acres owned: %d", cropData.getAcresOwned());
+        System.out.format("\nCurrent wheat in storehoues: %d\n", cropData.getWheatInStore());
+
     }
+
 
     // Author: Ching Lo
     // The feedPeopleView method
