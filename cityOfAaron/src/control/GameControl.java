@@ -11,6 +11,10 @@ package control;
 
 import model.*;
 import cityofaaron.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class GameControl {
@@ -274,6 +278,52 @@ public class GameControl {
         
         game.setTeam(team);
     }
+    
+    // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filePath) 
+    {
+        Game theGame;
+        theGame = null;
+
+        try (FileInputStream fips = new FileInputStream(filePath)) 
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            theGame = (Game) input.readObject();
+            CityOfAaron.setTheGame(theGame);
+        } catch (Exception e) {
+            System.out.println("\nThere was an error reading the saved game file.");
+        }
+    }
+    
+    // the saveGame method
+    // Purpose: save a game to file
+    // Parameters: the file path
+    // Returns: none
+    public static void saveGame(String filePath)
+    {
+        Game theGame;
+        theGame = null;
+
+        try (FileOutputStream fops = new FileOutputStream(filePath))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            //write game object to file
+            output.writeObject(theGame);
+            
+            //game saved message
+            System.out.println("Your game was saved.");
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving your game.");
+        }
+    }
+
 
     
 }
