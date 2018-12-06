@@ -11,10 +11,7 @@ import java.util.Random;
 import model.CropData;
 import exceptions.*;
 
-/**
- *
- * @author _Chris_
- */
+
 public class CropControl {
 
 // Generate a random number for the price of an acre of land. 

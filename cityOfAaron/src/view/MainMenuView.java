@@ -6,6 +6,7 @@
  */
 package view;
 
+import cityofaaron.CityOfAaron;
 import control.*;
 
 
@@ -36,61 +37,6 @@ Delete these variable declarations. They will be inherited from the abstract cla
                 + " 5 - Quit\n",     // arguments " , "
                 5);
     }
-
-    
-/*    
-Delete the code for these methods from the MainMenuView class.
-We want this class to use the code for these methods that 
-is in the base abstract MenuView class.
-
-    
-    // The displayMenuView method
-    // Purpose: displays the menu, gets the user's input, and does the 
-    //               selected action
-    // Parameters: none
-    // Returns: none
-    // =========================================================   
-    public void displayMenuView() {
-        int menuOption;
-        do {
-            // Display the menu
-            System.out.println(theMenu);
-
-            // Prompt the user and get the user’s input
-            menuOption = getMenuOption();
-
-            // Perform the desired action
-            doAction(menuOption);
-
-        } while (menuOption != max);
-    }
-
-    // The getMenuOption method
-    // Purpose: gets the user's input
-    // Parameters: none
-    // Returns: integer - the option selected
-    // ===================================       
-    public int getMenuOption() {
-        // declare a variable to hold user’s input
-        int userInput = 0;
-        final int MAX = 5;
-        Scanner keyboard = new Scanner(System.in);
-
-        // begin loop
-        do {
-            // get user input from the keyboard
-            userInput = keyboard.nextInt();
-            // if it is not a valid value, output an error message
-            if (userInput < 1 || userInput > MAX) {
-                System.out.println("Error: you must select 1, 2, 3, 4, or 5");
-            }
-            // loop back to the top of the loop if input was not valid
-            // end loop
-        } while (userInput < 1 || userInput > MAX);
-        return userInput;
-
-    }
-*/
     
     // The doAction method
     // Purpose: performs the selected action
@@ -111,7 +57,7 @@ is in the base abstract MenuView class.
                 displayHelpMenuView();
                 break;
             case 4: // save game
-                displaySaveGameView();
+                saveGame();
                 break;
             case 5:
                 System.out.println("Thanks for playing ... goodbye.");
@@ -150,25 +96,47 @@ is in the base abstract MenuView class.
     }
 
     // The startSavedGame method
-    // Purpose: loads and starts a saved game 
+    // Purpose: loads a saved game object from disk and start the game
+    // Parameters: none
+    // Returns: none
     // ===================================     
-public void startSavedGame( ) {
-        System.out.println("\nStart saved game option selected.");
+    public void startSavedGame() {
+        System.out.println("\nStart saved game option selected."); // the stub
         
         // get rid of nl character left in the stream
-        keyboard.nextLine(); 
-        
+        keyboard.nextLine();
+
         // prompt user and get a file path
-        System.out.println("Enter file name.");
-        String filepath = keyboard.next();
-         
+        System.out.println("What is the name of your game?");
+        String filePath = keyboard.next();
+
         // call the getSavedGame( ) method in the GameControl class to load the game
-        GameControl.getSavedGame(filepath);
+        GameControl.getSavedGame(filePath);
         
         // display the game menu for the loaded game
         GameMenuView gmv = new GameMenuView();
         gmv.displayMenu();
+             
+    }
+    
+    // the saveGame Method
+    // Purpose: to save the existing game
+    // Parameters: none
+    // Return: none
+    public void saveGame() {
 
+        // prompt user and get a file path
+        System.out.println("Please enter a name for your game.");
+        String filePath = keyboard.next();
+
+        // call the saveGame() method in the GameControl class to load the game
+        GameControl.saveGame(filePath);
+
+        System.out.println("Game saved into file: " + filePath);
+
+        // display the game menu for the saved game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
     }
 
     // The displayHelpMenuView method
@@ -198,13 +166,6 @@ public void startSavedGame( ) {
      */
     public void displayHelpMenu() {
         System.out.println("This is the displayHelpMenu method");
-    }
-
-    /**
-     * saveGame Method Purpose: save the existing game
-     */
-    public void saveGame() {
-        System.out.println("This is the saveGame method");
     }
 
 }
