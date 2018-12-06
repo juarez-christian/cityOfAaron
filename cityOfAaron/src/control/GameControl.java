@@ -275,6 +275,52 @@ public class GameControl {
         game.setTeam(team);
     }
 
-    
-}
+ // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filePath)
+    {
+        // Create game object
+        Game theGame = null;
+        
+        // Create input stream
+        try (FileInputStream fips = new FileInputStream(_filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            // Get saved game and save to game object in JVM
+            theGame = (Game)  input.readObject();
+            
+            // Load game object into curent game
+            CityOfAaron.setTheGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
+    }
+
+    /** saveGame method
+    * Purpose: save game object to file
+    */
+    public static void saveGame (Game _theGame, String _filename){
+        
+        // Create output stream
+        try(FileOutputStream fos = new FileOutputStream(_filename)){
+            ObjectOutputStream output = new ObjectOutputStream(fos);
+            
+            // Write game object to file
+            output.writeObject(theGame);
+            
+            // Success message
+            System.out.println("Game was saved successfully.");
+        }
+        catch(Exception e){
+            System.out.println("There was an error saving the game.");
+        }
+    }
+}   
+
 

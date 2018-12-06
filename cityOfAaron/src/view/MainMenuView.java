@@ -152,8 +152,23 @@ is in the base abstract MenuView class.
     // The startSavedGame method
     // Purpose: loads and starts a saved game 
     // ===================================     
-    public void startSavedGame() {
-        System.out.println("\nStart saved game option selected."); // the stub
+public void startSavedGame( ) {
+        System.out.println("\nStart saved game option selected.");
+        
+        // get rid of nl character left in the stream
+        keyboard.nextLine(); 
+        
+        // prompt user and get a file path
+        System.out.println("Enter file name.");
+        String filepath = keyboard.next();
+         
+        // call the getSavedGame( ) method in the GameControl class to load the game
+        GameControl.getSavedGame(filepath);
+        
+        // display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
+
     }
 
     // The displayHelpMenuView method
