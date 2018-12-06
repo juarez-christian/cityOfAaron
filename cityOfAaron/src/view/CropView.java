@@ -217,24 +217,35 @@ public CropView()
     // Parameters: none
     // Returns: none
     // Author: Kachia Vang
-    public static void plantCropsView() {
-        //display current land, wheat, and population
-        System.out.format("\n\nHow much land needed for crops?\nAcres of land owned: %d\n", cropData.getAcresOwned());
-        System.out.format("Bushels of Wheat in storehouse: %d\n", cropData.getWheatInStore());
-        System.out.format("Current city population: %d\n", cropData.getPopulation());
-        //display conditions needed to care for crops and prompt user for input
-        System.out.println("\n1 bushel of wheat can plant 2 acres, "
+    public static void plantCropsView() {        
+        int toPlant;
+        boolean paramsNotOkay;
+        do{
+            paramsNotOkay = false;
+            //display current land, wheat, and population
+            System.out.format("\n\nAcres of land owned: %d\n", cropData.getAcresOwned());
+            System.out.format("Bushels of Wheat in storehouse: %d\n", cropData.getWheatInStore());
+            System.out.format("Current city population: %d\n", cropData.getPopulation());
+            System.out.println("\n1 bushel of wheat can plant 2 acres, "
                 + "while 1 person can take care of 10 acres planted.\n"
                 + "How many acres of land do you wish to plant? ");
-        //get input and save
-        int toPlant;
-        toPlant = keyboard.nextInt();
-        //call plantCrops() method to plant crops
-        CropControl.plantCrops(toPlant, cropData);
+            toPlant = keyboard.nextInt();
+            try {
+                //call plantCrops() method to plant crops
+                CropControl.plantCrops(toPlant, cropData);
+            }
+            catch(CropException e) {
+                //error message to be displayed
+                System.out.println("I am sorry, this cannot be done.");
+                System.out.println(e.getMessage());
+                paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);
         //output acres planted for future harvest
         System.out.format("\nYou have planted %d acres of land for next year's harvest.", cropData.getAcresPlanned());
         System.out.format("\nCurrent wheat in storehoues: %d\n", cropData.getWheatInStore());
     }
+
 
     // The displayCropsReportView method
     // Purpose: interface with the user input for display a report of the crops
