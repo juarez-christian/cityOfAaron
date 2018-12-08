@@ -209,7 +209,7 @@ public class GameControl {
     
     /*****************************
      * LISTS
-     */
+    ******************************/
     
     /*
      * List of Animals
@@ -325,11 +325,41 @@ public class GameControl {
         }
     }
 
-    public static void printWriter(String fileLocation, ArrayList<ListItem> animals, String animal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+      /*****************************
+     * PRINT WRITER METHODS
+    ******************************/
+    
+    // the printWriter method for Animal List
+    // Purpose: to save a list to disk
+    // Parameters: the file path, the object, the animal list
+    // Returns: none
+    
+    public static void printAnimals (String _fileName) {
+       
+        //Create Print Writer object and write to file
+        try (PrintWriter printWriter = new PrintWriter(new File(_fileName))) {
+            
+            // get a reference to the ArrayList
+            ArrayList<ListItem> animals = game.getAnimals();
 
- /**
+            // output headerfor the report
+            printWriter.println ("Animal List in Inventory:\n");
+   
+            // Get the data from the ArrayList and write it to file
+            for (ListItem animal: animals) {
+                printWriter.println(animal.getName() + "\t" + animal.getNumber());
+            }
+            // Success message
+            System.out.println("List of animals successfully written to " 
+                    + _fileName + ".txt");
+             
+        } catch (Exception e) {
+            // Output error message
+            System.out.println("Error: Sorry, Animal List was not saved to file." + e.getMessage());
+        }
+    }
+    
+    /**
      * printTools method
      * Purpose: print to file the tools array
      */
@@ -357,7 +387,8 @@ public class GameControl {
             System.out.println("Unable to save tools list to file");
         }
     }
- 
+
+   
 }   
 
 
