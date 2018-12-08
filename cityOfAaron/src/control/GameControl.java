@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.io.*;
 
 public class GameControl {
     // size of the Locations array
@@ -328,7 +329,34 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+ /**
+     * printTools method
+     * Purpose: print to file the tools array
+     */
+    public static void printTools (String _filename) {
+        
+        // create the PrintWriter object and write to file
+        try(PrintWriter printWriter = new PrintWriter (new File(_filename));) {
 
+            // get a reference to the ArrayList
+            ArrayList<ListItem> tools = game.getTools();
+
+            // output a heading for the report
+            printWriter.println ("List of tools in inventory:\n");
+   
+            // Get the data from the ArrayList and write it to file
+            for (ListItem tool: tools) {
+                printWriter.println(tool.getName() + "\t" + tool.getNumber());
+            }
+            // Success message
+            System.out.println("List of tools successfully written to " 
+                    + _filename + ".txt");
+             
+        } catch (Exception e) {
+            // Output error message
+            System.out.println("Unable to save tools list to file");
+        }
+    }
  
 }   
 

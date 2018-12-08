@@ -5,12 +5,9 @@
  *  Team members:  Ching Lo, Kachia Vang, Christian Juarez
  */
 package model;
+import java.io.Serializable;
 
-/**
- *
- * @author Kachia Vang
- */
-public class Location {
+public class Location implements Serializable {
     
     //Variables that consist of description and symbol of location
     private String description;

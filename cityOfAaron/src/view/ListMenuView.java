@@ -99,7 +99,10 @@ public class ListMenuView extends MenuView{
      * Author: Kachia
      */
     public void listTools() {
-        // get the tools list from game object
+        // Variable for getting users input wheter to print
+        int print;
+        
+        // Get tools list from game object
         ArrayList<ListItem> tools = game.getTools();
         
         // Print off header
@@ -110,6 +113,22 @@ public class ListMenuView extends MenuView{
         // Print off tools and quantities
         for (ListItem tool: tools) {
             System.out.println(tool.getName() + "\t" + tool.getNumber());
+        }
+        
+        // Prompt to print report
+        System.out.println("\nWould you like to save a copy to disk? " 
+                + "\n 1 - Yes \n 2 - No");
+        
+        // Get user input
+        print = keyboard.nextInt();
+        
+        // 1 = write to disk, 2 = return to menu, other = invalid & return to menu
+        if (print == 1) {
+            printToolsView();
+        }
+        else if (print == 2){}
+        else {
+            System.out.println("Invalid entry.");
         }
     }
     
@@ -153,7 +172,26 @@ public class ListMenuView extends MenuView{
         }
         System.out.println("-----------------------------------------------------------------------------");
     }
+    /**
+     * printToolsView method
+     * Purpose: print to file the tools array
 
+     */
+    public void printToolsView() {
+        // declare a string to hold the file name
+        String filename;
+
+        // prompt the user for a file name, get and save the user’s input
+        System.out.println("Enter file name.");
+        
+        // Clear keyboard
+        keyboard.nextLine();
+        // Get user input for file name
+        filename = keyboard.next();
+        
+        // Send data to control layer
+        GameControl.printTools(filename);
+    }
 }
 
         
