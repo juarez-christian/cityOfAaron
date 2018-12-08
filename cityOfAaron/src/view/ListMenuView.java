@@ -9,8 +9,10 @@
 package view;
 import cityofaaron.CityOfAaron;
 import control.GameControl;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
-import java.io.PrintStream;
 import model.*;
 
 
@@ -44,7 +46,8 @@ public class ListMenuView extends MenuView{
     @Override public void doAction(int option) {
         switch (option) {
             case 1: //List the animals
-                listAnimals();
+                viewAnimalList();
+                displayMenu();
                 break;
             case 2: //List tools
                 listTools();
@@ -59,12 +62,12 @@ public class ListMenuView extends MenuView{
                     }
     }
     
-    /**
-     * Purpose: Display the list of animals that the player has<p>
-     * @Param none
-     * Author: Ching Lo
-     */
-    public void listAnimals() {
+    //The viewAnimalList() method
+    //Purpose:  To prompt the player to choose to view or save the animal list
+    //or return to the lists menu
+    //Paramaters: none
+    //Returns:  none
+    public void viewAnimalList() {
         // System.out.println("Display a list of animals here"); //removed stub
         // display list code
         ArrayList<ListItem> animals = game.getAnimals();
@@ -86,8 +89,10 @@ public class ListMenuView extends MenuView{
             System.out.println();
         }
         System.out.println("-----------------------------------------------------------------------------");
-    }
     
+    }
+        
+
     /**
      * Purpose: Display the list of tools that the player has<p>
      * @Param none

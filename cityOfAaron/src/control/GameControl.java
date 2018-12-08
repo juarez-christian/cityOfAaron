@@ -324,6 +324,10 @@ public class GameControl {
         }
     }
 
+    public static void printWriter(String fileLocation, ArrayList<ListItem> animals, String animal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
  
 }   
