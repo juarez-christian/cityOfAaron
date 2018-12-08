@@ -46,7 +46,7 @@ public class ListMenuView extends MenuView{
     @Override public void doAction(int option) {
         switch (option) {
             case 1: //List the animals
-                viewAnimalList();
+                animalList();
                 displayMenu();
                 break;
             case 2: //List tools
@@ -62,24 +62,19 @@ public class ListMenuView extends MenuView{
                     }
     }
     
-    //The viewAnimalList() method
+    //The animalList() method
     //Purpose:  To prompt the player to choose to view or save the animal list
     //or return to the lists menu
     //Paramaters: none
     //Returns:  none
-    public void viewAnimalList() {
-        // System.out.println("Display a list of animals here"); //removed stub
+    public void animalList() {
         // display list code
+        int print;
+        
+        // get list from Game object
         ArrayList<ListItem> animals = game.getAnimals();
         System.out.println("City of Aaron - Animal List");
-        
-        /*System.out.println("Here is a list of animals\n" +
-                "------------------------------------");
-        for (ListItem animal: animals) {
-            System.out.println(animal.getName() + "\t" + animal.getNumber());
-        }
-        */
-        
+
         System.out.println("-----------------------------------------------------------------------------");
         System.out.printf("%10s %30s", "ANIMALS", "QUANTITY");
         System.out.println();
@@ -89,6 +84,22 @@ public class ListMenuView extends MenuView{
             System.out.println();
         }
         System.out.println("-----------------------------------------------------------------------------");
+        
+        // Prompt to print report
+        System.out.println("\nWould you like to save a copy to disk? " 
+                + "\n 1 - Yes \n 2 - No");
+        
+        // Get user input
+        print = keyboard.nextInt();
+        
+        // 1 = write to disk, 2 = return to menu, other = invalid & return to menu
+        if (print == 1) {
+            printView();
+        }
+        else if (print == 2){}
+        else {
+            System.out.println("Invalid entry.");
+        }
     
     }
         
@@ -124,7 +135,7 @@ public class ListMenuView extends MenuView{
         
         // 1 = write to disk, 2 = return to menu, other = invalid & return to menu
         if (print == 1) {
-            printToolsView();
+            printView();
         }
         else if (print == 2){}
         else {
@@ -177,7 +188,7 @@ public class ListMenuView extends MenuView{
      * Purpose: print to file the tools array
 
      */
-    public void printToolsView() {
+    public void printView() {
         // declare a string to hold the file name
         String filename;
 
@@ -191,6 +202,7 @@ public class ListMenuView extends MenuView{
         
         // Send data to control layer
         GameControl.printTools(filename);
+        GameControl.printAnimals(filename);
     }
 }
 
