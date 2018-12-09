@@ -151,7 +151,7 @@ public class ListMenuView extends MenuView{
     
     
     /**
-     * Purpose: Display the list of tools that the player has<p>
+     * Purpose: Display the list of provisions<p>
      * @Param none
      * Author: Christian
      */
