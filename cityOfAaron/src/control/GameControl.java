@@ -389,6 +389,39 @@ public class GameControl {
     }
 
    
+    
+    
+    
+    
+    /**
+     * printProvisions method
+     * Purpose: print to file the tools array
+     */
+    public static void printProvisions(String _filename) {
+        
+        // create the PrintWriter object and write to file
+        try(PrintWriter printWriter = new PrintWriter (new File(_filename));) {
+
+            // get a reference to the ArrayList
+            ArrayList<ListItem> provisions = game.getProvisions();
+
+            // output a heading for the report
+            printWriter.println ("List of Provisions in inventory:\n");
+   
+            // Get the data from the ArrayList and write it to file
+            for (ListItem provision: provisions) {
+                printWriter.println(provision.getName() + "\t" + provision.getNumber());
+            }
+            // Success message
+            System.out.println("List of provisions successfully written to " 
+                    + _filename + ".txt");
+             
+        } catch (Exception e) {
+            // Output error message
+            System.out.println("Unable to save provisions list to file");
+        }
+    
 }   
 
 
+}

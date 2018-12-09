@@ -147,26 +147,52 @@ public class ListMenuView extends MenuView{
         }
     }
     
-    /*
-     * Purpose: Display the list the provisions that the player has<p>
+    
+    
+    
+    /**
+     * Purpose: Display the list of tools that the player has<p>
      * @Param none
      * Author: Christian
-     */     
+     */
     public void listProvisions() {
-      // System.out.println("Display a list of provisions here");
-      // get the ArrayList from the Game object
-      ArrayList<ListItem> provisions = game.getProvisions();
-        System.out.println("City of Aaron - Provisions List");
-        System.out.println("-----------------------------------------------------------------------------");
-        System.out.printf("%10s %30s", "PROVISION", "QUANTITY");
-        System.out.println();
-        System.out.println("-----------------------------------------------------------------------------");
-        for(ListItem provision: provisions){
-            System.out.format("%10s %30s",provision.getName(), provision.getNumber());
-            System.out.println();
+        // Variable for getting users input wheter to print
+        int print;
+        
+        // Get provisions list from game object
+        ArrayList<ListItem> provisions = game.getProvisions();
+        
+        // Print off header
+        System.out.println("City of Aaron provisions list");
+        System.out.println("Here is a list of provisions\n" +
+                "------------------------------------");
+        
+        // Print off provisions and quantities
+        for (ListItem provision: provisions) {
+            System.out.println(provision.getName() + "\t" + provision.getNumber());
         }
-        System.out.println("-----------------------------------------------------------------------------");
+        
+        // Prompt to print report
+        System.out.println("\nIt is always a good idea to save a copy to disk. "
+                + "\nWould you like to do it now?" 
+                + "\n 1 - Yes \n 2 - No");
+        
+        // Get user input
+        print = keyboard.nextInt();
+        
+        // 1 = write to disk, 2 = return to menu, other = invalid & return to menu
+        if (print == 1) {
+            printView();
+        }
+        else if (print == 2){}
+        else {
+            System.out.println("Invalid entry.");
+        }
     }    
+    
+    
+    
+    
     
     /*
      * Purpose: List the team members that created this application<p>
@@ -177,7 +203,8 @@ public class ListMenuView extends MenuView{
         // System.out.println("Display the team members here");
         ArrayList<ListItem> team = game.getTeam();
         System.out.println("City of Aaron - Team Members List");
-        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("-----------------1"
+                + "121eee------------------------------------------------------------");
         System.out.printf("%10s %30s", "MEMBERS", "QUANTITY");
         System.out.println();
         System.out.println("-----------------------------------------------------------------------------");
