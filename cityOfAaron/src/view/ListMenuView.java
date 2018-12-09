@@ -68,8 +68,8 @@ public class ListMenuView extends MenuView{
     //Paramaters: none
     //Returns:  none
     public void animalList() {
-        // display list code
         int print;
+        String answer;
         
         // get list from Game object
         ArrayList<ListItem> animals = game.getAnimals();
@@ -93,14 +93,18 @@ public class ListMenuView extends MenuView{
         print = keyboard.nextInt();
         
         // 1 = write to disk, 2 = return to menu, other = invalid & return to menu
-        if (print == 1) {
-            printView();
-        }
-        else if (print == 2){}
-        else {
-            System.out.println("Invalid entry.");
-        }
-    
+        switch (print) {
+            case 1:
+                System.out.println("Enter a file name to save your list: ");
+                answer = keyboard.next();
+                GameControl.printAnimals(answer);
+                break;
+            case 2:
+                break;
+            default:
+                System.out.println("Invalid entry.");
+                break;
+        }  
     }
         
 
@@ -202,7 +206,7 @@ public class ListMenuView extends MenuView{
         
         // Send data to control layer
         GameControl.printTools(filename);
-        GameControl.printAnimals(filename);
+        //GameControl.printAnimals(filename);
     }
 }
 
