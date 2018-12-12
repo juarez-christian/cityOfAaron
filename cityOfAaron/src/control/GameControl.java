@@ -20,8 +20,8 @@ import java.io.*;
 
 public class GameControl {
     // size of the Locations array
-    private static final int MAX_ROW = 5; // these are used for the map object
-    private static final int MAX_COL = 5;
+    private static final int MAX_ROW = 6; // these are used for the map object
+    private static final int MAX_COL = 6;
     
     // Create a new Game object.
     private static Game game = new Game();
