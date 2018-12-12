@@ -64,7 +64,27 @@ private Game theGame = CityOfAaron.getTheGame();
      * ====================================================================
      */
     public void viewMap() {
-       System.out.println("This is the viewMap method.");
+        System.out.println("\n"
+                + "          >>>The City Map<<<     \n\n"
+                + "       0     1     2     3     4     5  \n"
+                + "  0 | ^^^ | ^^^  | @@@ | $$$ | ~~~ | ??? \n"
+                + "  1 | ^^^ | ^^^  | $$$ | $$$ | ~~~ | ??? \n"
+                + "  2 | *** | <><> | $$$ | $$$ | ~~~ | ??? \n"
+                + "  3 | *** | <><> | $$$ | $$$ | ~~~ | ??? \n"
+                + "  4 | *** | ^*^  | $$$ | $$$ | ~~~ | ??? \n"
+                + "  5 | !!! | !!!  | !!! | !!! | ~~~ | ??? \n"
+                + "  \n Map Key:\n"
+                + "  ~~~  - River\n"
+                + "  $$$  - Farmland\n"
+                + "  <><> - Storehouse\n"
+                + "  ***  - Garden\n"
+                + "  ^^^  - Village\n"
+                + "  ^*^  - Temple\n"
+                + "  @@@  - Ice Cream Shop\n"
+                + "  ???  - Wilderness Land\n"
+                + "  !!!  - Lamanites Border \n"
+                );
+        
     }
 
     /**
