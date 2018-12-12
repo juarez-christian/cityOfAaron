@@ -122,8 +122,14 @@ public class GameControl {
         location = new Location();
         location.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         location.setSymbol("$$$");
-        // Set this object in row 0, column 2
-        theMap.setLocation(0, 2, location);
+        // Set this object in rows 1, 2, 3, 4 and column 2
+        for(int i=1; i<5; i++){
+            theMap.setLocation(i, 2, location);
+        }
+        // Set this object in rows 0, 1, 2, 3, 4 and column 3
+        for(int i=0; i<5; i++){
+            theMap.setLocation(i, 3, location);
+        }
         
         // STOREHOUSE
         // Create a sring for storehouse location
@@ -134,7 +140,8 @@ public class GameControl {
         location = new Location();
         location.setDescription(storehouse + "\nLet's be frugal and self-reliant.");
         location.setSymbol("<><>");
-        // Set this object in row 3 in column 1 
+        // Set this object in row 2 and 3 in column 1 
+        theMap.setLocation(2, 1, location);
         theMap.setLocation(3, 1, location);
         
         // GARDEN
@@ -144,7 +151,7 @@ public class GameControl {
         // Set location for the garden
         location = new Location();
         location.setDescription(garden + "\nTake time to ponder on the beauty of the Earth.");
-        location.setSymbol("****");
+        location.setSymbol("***");
         // Set this object in rows 2, 3, 4 and column 0
         for(int i=2; i<5; i++)
         {
@@ -158,48 +165,58 @@ public class GameControl {
         // Set location for the village
         location = new Location();
         location.setDescription(village + "\nHome Sweet Home");
-        location.setSymbol("^^^^^");
-        // Set this object in rows 0, 1 and column 0
+        location.setSymbol("^^^");
+        // Set this object in rows 0, 1 and column 0, 1
         for(int i=0; i<2; i++)
         {
             theMap.setLocation(i, 0, location);
         }
         
         // TEMPLE
-        // Create a string for the garden
+        // Create a string for the temple
         String temple = "\nYou are entering sacred grounds. "+
                         "\nThe temple is heaven on earth.";
         // Set location for the garden
         location = new Location();
         location.setDescription(temple + "\nThank Heavenly Father often for all your blessings.");
-        location.setSymbol("^***^");
+        location.setSymbol("^*^");
         // Set this object in row 4 and column 1
         theMap.setLocation(4, 1, location);
         
-        
         // ICE CREAM SHOP
-        // Create a string for the garden
+        // Create a string for the ice cream shop
         String icecream = "\nThe people loves to eat ice cream!";
         // Set location for the garden
         location = new Location();
         location.setDescription(icecream + "\nVoted best ice cream in the world!");
         location.setSymbol("@@@");
-        // Set this object in row 1 and column 1
-        theMap.setLocation(1, 1, location);
-  
+        // Set this object in row 0 and column 2
+        theMap.setLocation(0, 2, location);
         
+        // Wilderness land
+        // Create a string for the wilderness land
+        String wilderness = "\nYou are entering unknown territotry. Return home for your safety.";
+        // Set location for the wilderness land
+        location = new Location();
+        location.setDescription(wilderness + "\nYou must return to the village now.");
+        location.setSymbol("???"); 
+        // Set this location object in each cell of the array in column 5
+        for(int i = 0; i < MAX_ROW; i++) {
+            theMap.setLocation(i, 5, location);
+        }       
+  
         // LAMANITES BORDER
-        // Create a string for the desert location
+        // Create a string for the Lamanite Border
         String lamanites = "\nYou have reached the border of the Lamanites. "+
                         "\nThough they hate us, let us show them kindness.";
         // Set location for the lamanites land
         location = new Location();
         location.setDescription(lamanites + "\nEnter at your own risk.");
         location.setSymbol("!!!");
-        // Set this object in each cell of the array in row 5
-        for(int i = 0; i < MAX_COL; i++) {
+        // Set this object in each cell of the array in row 5, columns 1-4
+        for(int i = 0; i < 4; i++) {
         //  theMap.setLocation(5, i, location);
-            theMap.setLocation(4, i, location);
+            theMap.setLocation(5, i, location);
         }
         
         // Save the Map object in the game
@@ -333,6 +350,7 @@ public class GameControl {
     // Purpose: to save a list to disk
     // Parameters: the file path, the object, the animal list
     // Returns: none
+    // author: Ching
     
     public static void printAnimals (String _fileName) {
        
@@ -362,6 +380,7 @@ public class GameControl {
     /**
      * printTools method
      * Purpose: print to file the tools array
+     * Author: Kachia
      */
     public static void printTools (String _filename) {
         
@@ -387,15 +406,11 @@ public class GameControl {
             System.out.println("Unable to save tools list to file");
         }
     }
-
-   
-    
-    
-    
     
     /**
      * printProvisions method
      * Purpose: print to file the tools array
+     * Author: Christian
      */
     public static void printProvisions(String _filename) {
         
@@ -423,5 +438,6 @@ public class GameControl {
     
 }   
 
+    
 
 }
