@@ -30,6 +30,7 @@ public class Game implements Serializable
     private ArrayList<ListItem> provisions;
     //variable for keeping a reference to the Team List object
     private ArrayList<ListItem> team;
+    private boolean endOfGame;
     
     public Game() {};
     
@@ -102,5 +103,23 @@ public class Game implements Serializable
         this.team = team;
     }
     
+        /**
+     * setEndOfGame
+     * @purpose The purpose for this method to to track the end of the current game
+     * @param _endOfGame 
+     * @return none
+     */
+    public void setEndOfGame (boolean _endOfGame) {
+        this.endOfGame = _endOfGame;
+    }
     
+    /**
+     * setEndOfGame
+     * @purpose The purpose for this method to to track the end of the current game
+     * @param none 
+     * @return boolean (endOfGame)
+     */    
+    public boolean getEndOfGame() {
+        return this.endOfGame;
+    }
 }

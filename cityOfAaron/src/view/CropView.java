@@ -96,8 +96,58 @@ public CropView()
 
         // call the feedPeopleView( ) method
         displayCropsReportView();
+        
+        endOfGame();
     }
 
+    /**
+     * endOfGame method
+     *
+     * @purpose The end of game method will be run every year. We will test for
+     * the number of years for the game duration, or if the player has allowed
+     * too many to die from starvation.
+     * @param none
+     * @return none
+     */
+    public static void endOfGame() {
+        Game game = CityOfAaron.getTheGame();
+        CropData cropData = game.getcropData();
+        try {
+            int _numberWhoDied = cropData.getNumberWhoDied();
+            int _currPopulation = cropData.getPopulation();
+            if (_currPopulation > 0) {
+                if (_numberWhoDied / _currPopulation >= .5) {
+                    System.out.println(
+                            "\n\nSorry, game over...  You have let "
+                            + cropData.getNumberWhoDied() + " people to die.\n\n"
+                            + "You will now be sent to your own peril by being \n" +
+                            "banished from our midst to fend for yourself.\n");
+                    game.setEndOfGame(true);
+                } else if (cropData.getYear() >= 10) {
+                    System.out.println("\n\nCongratulations! You have done well for our town\n"
+                            + "Please accept our tribute to you to stay in our town and live\n"
+                            + "in this wonderful home so long as you shall live, owing only\n"
+                            + "to work along side us in the fields with your family.\n"
+                            + "Rest easy our friend and enjoy your success!");
+                    game.setEndOfGame(true);
+                }
+            } else {
+                System.out.println(
+                        "\n\nSorry, game over...  You have let"
+                        + cropData.getNumberWhoDied() + " people to die.\n\n"
+                        + "You will now be sent to your own peril by being banished "
+                        + "from our midst to fend for yourself.\n");
+                game.setEndOfGame(true);
+            }
+        } catch (Exception e) {
+            System.out.println("\n\nThere was an error. Ending Game...");
+            game.setEndOfGame(true);
+        }
+
+    }
+
+    
+    
     // The buyLandView method
     // Purpose: interface with the user input for buying
     // Parameters: none 

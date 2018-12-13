@@ -36,18 +36,29 @@ public abstract class MenuView implements ViewInterface {
     // the displayMenu() method declared in ViewInterface. In other words, we are
     // providing an implementation for the function
     @Override
-    public void displayMenu() {
-        // execute this loop as long as the selected option is not max
-        int menuOption = 0;
+     public void displayMenu() {
+        int menuOption;
         do {
-            // display the menu
+            //display the menu
             System.out.println(menu);
-
-            // get the user's selection
+            //prompt the user and get the user's input
             menuOption = getMenuOption();
-
-            // perform the selected action
+            //Perform the desired action
             doAction(menuOption);
+
+            /* Test for the game object. This display is called for both the game
+             * menu and the main menu. A situation where the game
+             * object is not yet instantiated can occur.
+             */
+            if (game != null) {
+                if (game.getEndOfGame()) {
+                    System.out.println("\n\nYou have reached the end of the game.\n\n"
+                            + "Return to the main menu and start a new journey\n\n");
+                    menuOption = 5;
+                    return;
+                }
+            }
+
         } while (menuOption != max);
     }
 

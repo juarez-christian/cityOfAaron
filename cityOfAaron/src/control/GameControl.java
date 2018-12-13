@@ -48,6 +48,7 @@ public class GameControl {
         createToolList();
         createProvisionsList();
         createTeamList();
+        game.setEndOfGame(false);
     }
         
         
