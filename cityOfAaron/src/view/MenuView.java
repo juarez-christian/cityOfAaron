@@ -50,14 +50,14 @@ public abstract class MenuView implements ViewInterface {
              * menu and the main menu. A situation where the game
              * object is not yet instantiated can occur.
              */
-            if (game != null) {
-                if (game.getEndOfGame()) {
-                    System.out.println("\n\nYou have reached the end of the game.\n\n"
-                            + "Return to the main menu and start a new journey\n\n");
-                    menuOption = 5;
-                    return;
-                }
-            }
+//            if (game != null) {
+//                if (game.getEndOfGame()) {
+//                    System.out.println("\n\nYou have reached the end of the game.\n\n"
+//                            + "Return to the main menu and start a new journey\n\n");
+//                    menuOption = 5;
+//                    return;
+//                }
+//            }
 
         } while (menuOption != max);
     }
