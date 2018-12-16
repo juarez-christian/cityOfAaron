@@ -7,9 +7,13 @@
  */
 package control;
 
+import cityofaaron.CityOfAaron;
 import java.util.Random;
 import model.CropData;
 import exceptions.*;
+import java.util.ArrayList;
+import model.Game;
+import model.ListItem;
 
 
 public class CropControl {
@@ -199,5 +203,47 @@ public class CropControl {
         _cropData.setAcresPlanted(acresToPlant);
     }
     
+ 
+ 
+ /*
+     * SurplusWheatForTools method 
+     * Purpose: To use surplus crops for purchase of tools
+     */
+     public static void useSurplusWheatForTools(int toolsToPurchase, CropData cropData) throws CropException {
+        // 1 tool per 2 bushel of wheat
+        int _toolsToPurchase = toolsToPurchase;
+        if (toolsToPurchase < 0) {
+            throw new CropException ("Please pick a valid amount to use");        }
+
+        int wheatInStore = cropData.getWheatInStore();
+        if (wheatInStore < toolsToPurchase * 2) {
+            throw new CropException ("You do not have enough wheat in store. You may only use surplus");
+        }
+
+        //get remaining wheat after spending for tools
+        wheatInStore -= toolsToPurchase * 2;
+        
+        Game theGame = CityOfAaron.getTheGame();
+        ArrayList<ListItem> tools = theGame.getTools();
+        
+         
+        // The total amount of tools
+        while (_toolsToPurchase > 0) {
+            for (ListItem tool : tools) {	
+                if (_toolsToPurchase > 0){
+                     _toolsToPurchase--;
+                     int toolCount = tool.getNumber();
+                 tool.setNumber(toolCount + 1);
+                 theGame.setToolCount(theGame.getToolCount() + 1);
+                 System.out.println("hit");
+                         
+                 }
+             }
+        }
+        System.out.println("toolsCount" + theGame.getToolCount());
+        theGame.setToolMultiplier(Math.round(theGame.getToolCount() / (theGame.getToolCount() - 1)  * 1.5));
+        // Refreshing cropData with the new values
+        cropData.setWheatInStore(wheatInStore);
+    }    
 
 }

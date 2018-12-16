@@ -34,6 +34,25 @@ public class Game implements Serializable
     
     public Game() {};
     
+    private int toolCount;
+    private double multiplier;
+
+    public void setToolMultiplier(double multiplier) {
+            this.multiplier = multiplier;
+        }
+        
+        public double getToolMultiplier(){
+            return multiplier;
+        }
+
+    public int getToolCount() {
+        return toolCount;
+    }
+
+    public void setToolCount(int toolCount) {
+        this.toolCount = toolCount;
+    }
+    
     public Player getthePlayer()
     {
         return this.thePlayer;
@@ -122,4 +141,6 @@ public class Game implements Serializable
     public boolean getEndOfGame() {
         return this.endOfGame;
     }
+
+   
 }
