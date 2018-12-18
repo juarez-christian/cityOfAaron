@@ -5,10 +5,6 @@
  */
 package model;
 
-/**
- *
- * @author _Chris_
- */
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -122,7 +118,7 @@ public class Game implements Serializable
         this.team = team;
     }
     
-        /**
+    /**
      * setEndOfGame
      * @purpose The purpose for this method to to track the end of the current game
      * @param _endOfGame 
